@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Skills - Karthikean Pathmanathan</title>
+    <meta name="description" content="Technical skills and expertise of Karthikean Pathmanathan" />
+    <link rel="icon" type="image/png" href="../../assets/logo/KP_icon.png" />
+    <link rel="stylesheet" href="../../assets/css/dark.css" />
+    <style>html,body{background:#081024;color:#e6eef6} .container{color:inherit}</style>
+    <style>
+      .page-header {
+        padding: 3rem 0 2rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .page-header h1 {
+        margin: 0 0 0.5rem;
+        font-size: 2.5rem;
+        color: var(--accent);
+      }
+      .page-header p {
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .labs-section {
+        padding: 3rem 0;
+      }
+      .section-title {
+        font-size: 2rem;
+        margin: 3rem 0 1.5rem;
+        color: var(--accent);
+        border-bottom: 2px solid rgba(96,165,250,0.3);
+        padding-bottom: 0.5rem;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      .skill-category {
+        background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(96,165,250,0.05));
+        padding: 1.5rem;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: all 0.3s;
+      }
+      .skill-category:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(96,165,250,0.15);
+        border-color: rgba(96,165,250,0.3);
+      }
+      .skill-category h3 {
+        color: var(--accent);
+        margin: 0 0 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.3rem;
+      }
+      .skill-category .icon {
+        font-size: 1.5rem;
+      }
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .skill-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .skill-item:last-child {
+        border-bottom: none;
+      }
+      .skill-name {
+        color: #e6eef6;
+        font-weight: 500;
+      }
+      .skill-level {
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+      }
+      .skill-level-bar {
+        width: 100px;
+        height: 6px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .skill-level-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--accent), #3b82f6);
+        transition: width 0.5s ease;
+      }
+      .lab-card {
+        background: linear-gradient(180deg,rgba(255,255,255,0.03),transparent);
+        padding: 2rem;
+        border-radius: var(--radius);
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: all 0.2s;
+      }
+      .lab-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(96,165,250,0.1);
+        border-color: rgba(96,165,250,0.3);
+      }
+      .lab-card h3 {
+        color: var(--accent);
+        margin: 0 0 0.5rem;
+      }
+      .lab-meta {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+      .lab-description {
+        line-height: 1.7;
+        color: #d0d8e0;
+        margin: 1rem 0;
+      }
+      .lab-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+      .tech-badge {
+        background: rgba(96,165,250,0.15);
+        color: var(--accent);
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        border: 1px solid rgba(96,165,250,0.3);
+      }
+      .lab-links {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+      .lab-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(96,165,250,0.1);
+        color: var(--accent);
+        text-decoration: none;
+        border-radius: 8px;
+        border: 1px solid rgba(96,165,250,0.3);
+        font-size: 0.9rem;
+        transition: background 0.2s;
+      }
+      .lab-links a:hover {
+        background: rgba(96,165,250,0.2);
+      }
+      .cert-card {
+        background: linear-gradient(135deg, rgba(96,165,250,0.05), rgba(255,255,255,0.02));
+        padding: 1.5rem;
+        border-radius: var(--radius);
+        border: 1px solid rgba(96,165,250,0.2);
+        margin-bottom: 1rem;
+      }
+      .cert-card h4 {
+        color: var(--accent);
+        margin: 0 0 0.5rem;
+      }
+      .cert-issuer {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      .stat-card {
+        background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(255,255,255,0.02));
+        padding: 1.5rem;
+        border-radius: var(--radius);
+        text-align: center;
+        border: 1px solid rgba(96,165,250,0.3);
+      }
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--accent);
+        margin: 0;
+      }
+      .stat-label {
+        color: var(--muted);
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header partial will be injected here -->
+    <div id="partial-header"></div>
+
+    <main>
+      <div class="page-header">
+        <div class="container">
+          <h1>Skills & Expertise</h1>
+          <p>Comprehensive cybersecurity capabilities across security operations, detection engineering, threat analysis, and incident response</p>
+        </div>
+      </div>
+
+      <section class="labs-section">
+        <div class="container">
+          
+          <!-- Stats Overview -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Detection Rules Created</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Log Sources Integrated</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Security Tools Proficient</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Incidents Analyzed</div>
+            </div>
+          </div>
+
+          <!-- Core Skills -->
+          <h2 class="section-title">Core Technical Skills</h2>
+          <div class="skills-grid">
+            
+            <!-- SIEM & Log Analysis -->
+            <div class="skill-category">
+              <h3><span class="icon">📊</span> SIEM & Log Analysis</h3>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <span class="skill-name">Splunk</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 90%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">ELK Stack</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Microsoft Sentinel</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 80%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Wazuh</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 75%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">QRadar</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 70%"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Programming & Scripting -->
+            <div class="skill-category">
+              <h3><span class="icon">💻</span> Programming & Scripting</h3>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <span class="skill-name">Python</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 90%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">PowerShell</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Bash</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 80%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">SPL (Splunk)</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 90%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">KQL (Kusto)</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Threat Intelligence -->
+            <div class="skill-category">
+              <h3><span class="icon">🎯</span> Threat Intelligence</h3>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <span class="skill-name">MISP</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">MITRE ATT&CK</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 90%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">OpenCTI</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 75%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">STIX/TAXII</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 80%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">OSINT Tools</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Endpoint Security -->
+            <div class="skill-category">
+              <h3><span class="icon">🛡️</span> Endpoint Security</h3>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <span class="skill-name">Microsoft Defender</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">CrowdStrike</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 80%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Carbon Black</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 75%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Sysmon</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">YARA Rules</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 80%"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Network Security -->
+            <div class="skill-category">
+              <h3><span class="icon">🌐</span> Network Security</h3>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <span class="skill-name">Zeek (Bro)</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 80%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Suricata</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Wireshark</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 90%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">tcpdump</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">pfSense / Firewall</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 75%"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Cloud Security -->
+            <div class="skill-category">
+              <h3><span class="icon">☁️</span> Cloud Security</h3>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <span class="skill-name">AWS Security</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 80%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Azure Security</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">CloudWatch</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 75%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Terraform</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 70%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-name">Docker/Kubernetes</span>
+                  <div class="skill-level">
+                    <div class="skill-level-bar">
+                      <div class="skill-level-fill" style="width: 75%"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Hands-on Experience -->
+          <h2 class="section-title">Hands-On Experience & Demonstrations</h2>
+
+          <div class="lab-card">
+            <h3>🔍 SIEM Detection Lab</h3>
+            <div class="lab-meta">Real-world attack simulation and detection engineering</div>
+            <div class="lab-description">
+              <p>Comprehensive home lab environment simulating enterprise security monitoring. Includes Active Directory domain, multiple workstations, and centralized logging with Splunk. Used for developing and testing detection rules against MITRE ATT&CK techniques.</p>
+            </div>
+            <div class="lab-tech">
+              <span class="tech-badge">Splunk</span>
+              <span class="tech-badge">Active Directory</span>
+              <span class="tech-badge">Sysmon</span>
+              <span class="tech-badge">Atomic Red Team</span>
+              <span class="tech-badge">Windows Server</span>
+              <span class="tech-badge">VirtualBox</span>
+            </div>
+            <div class="lab-links">
+              <a href="#"><span>📖</span> Lab Guide</a>
+              <a href="#"><span>💻</span> GitHub Repo</a>
+            </div>
+          </div>
+
+          <div class="lab-card">
+            <h3>🎣 Phishing Analysis Toolkit</h3>
+            <div class="lab-meta">Automated phishing email analysis and IOC extraction</div>
+            <div class="lab-description">
+              <p>Python-based toolkit for analyzing suspicious emails, extracting IOCs, performing reputation checks, and generating investigation reports. Integrates with VirusTotal, URLScan, and AbuseIPDB for threat intelligence enrichment.</p>
+            </div>
+            <div class="lab-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">VirusTotal API</span>
+              <span class="tech-badge">URLScan</span>
+              <span class="tech-badge">Email Parsing</span>
+              <span class="tech-badge">Regex</span>
+            </div>
+            <div class="lab-links">
+              <a href="#"><span>🚀</span> Try Demo</a>
+              <a href="#"><span>💻</span> Source Code</a>
+            </div>
+          </div>
+
+          <div class="lab-card">
+            <h3>🔐 Password Security Analyzer</h3>
+            <div class="lab-meta">Client-side password strength and breach checking</div>
+            <div class="lab-description">
+              <p>Interactive web tool that analyzes password strength using entropy calculations, pattern detection, and Have I Been Pwned API checks. Provides real-time feedback and recommendations for password improvement.</p>
+            </div>
+            <div class="lab-tech">
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">HIBP API</span>
+              <span class="tech-badge">ZXCVBN</span>
+              <span class="tech-badge">HTML/CSS</span>
+            </div>
+            <div class="lab-links">
+              <a href="#"><span>🔗</span> Live Demo</a>
+              <a href="#"><span>💻</span> Code</a>
+            </div>
+          </div>
+
+          <div class="lab-card">
+            <h3>📊 Threat Hunting Dashboard</h3>
+            <div class="lab-meta">Custom Kibana/Grafana dashboards for proactive threat hunting</div>
+            <div class="lab-description">
+              <p>Collection of custom dashboards and visualizations for threat hunting activities. Includes anomaly detection, baseline deviation, and suspicious behavior identification across endpoint, network, and cloud data sources.</p>
+            </div>
+            <div class="lab-tech">
+              <span class="tech-badge">Elasticsearch</span>
+              <span class="tech-badge">Kibana</span>
+              <span class="tech-badge">Grafana</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Sigma Rules</span>
+            </div>
+            <div class="lab-links">
+              <a href="#"><span>📊</span> View Dashboards</a>
+              <a href="#"><span>📥</span> Download</a>
+            </div>
+          </div>
+
+          <div class="lab-card">
+            <h3>🔬 Malware Analysis Sandbox</h3>
+            <div class="lab-meta">Isolated environment for safe malware analysis</div>
+            <div class="lab-description">
+              <p>Automated malware analysis pipeline using Cuckoo Sandbox, YARA rules, and behavioral analysis. Provides detailed reports on file behavior, network connections, registry changes, and IOC extraction.</p>
+            </div>
+            <div class="lab-tech">
+              <span class="tech-badge">Cuckoo Sandbox</span>
+              <span class="tech-badge">YARA</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">VirusTotal</span>
+              <span class="tech-badge">REMnux</span>
+            </div>
+            <div class="lab-links">
+              <a href="#"><span>📋</span> Documentation</a>
+              <a href="#"><span>⚙️</span> Setup Guide</a>
+            </div>
+          </div>
+
+          <div class="lab-card">
+            <h3>🌐 Network Traffic Analyzer</h3>
+            <div class="lab-meta">Deep packet inspection and protocol analysis tool</div>
+            <div class="lab-description">
+              <p>Web-based tool for uploading and analyzing PCAP files. Provides protocol breakdowns, conversation analysis, suspicious pattern detection, and IOC extraction from network traffic.</p>
+            </div>
+            <div class="lab-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Scapy</span>
+              <span class="tech-badge">Flask</span>
+              <span class="tech-badge">D3.js</span>
+              <span class="tech-badge">Zeek</span>
+            </div>
+            <div class="lab-links">
+              <a href="#"><span>🔗</span> Web App</a>
+              <a href="#"><span>💻</span> GitHub</a>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <h2 class="section-title">Certifications & Training</h2>
+          <div class="cert-card">
+            <h4>Security+ (In Progress)</h4>
+            <div class="cert-issuer">CompTIA - Expected 2025</div>
+          </div>
+          <div class="cert-card">
+            <h4>MITRE ATT&CK Defender (MAD)</h4>
+            <div class="cert-issuer">MITRE - ATT&CK Framework Training</div>
+          </div>
+          <div class="cert-card">
+            <h4>Splunk Core Certified User</h4>
+            <div class="cert-issuer">Splunk - SIEM Platform Proficiency</div>
+          </div>
+          <div class="cert-card">
+            <h4>TryHackMe SOC Level 1</h4>
+            <div class="cert-issuer">TryHackMe - Security Operations Training</div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- footer partial will be injected here -->
+    <div id="partial-footer"></div>
+
+    <script>
+      // Load partials
+      async function loadPartial(id, url){
+        try {
+          const res = await fetch(url);
+          if(!res.ok) throw new Error('Failed to load ' + url);
+          const html = await res.text();
+          document.getElementById(id).innerHTML = html;
+        } catch (err) {
+          console.error(err);
+        }
+      }
+
+      loadPartial('partial-header', '../../partial/header.html');
+      loadPartial('partial-footer', '../../partial/footer.html');
+
+      // Year in footer
+      setTimeout(() => {
+        const yearEl = document.getElementById('year');
+        if(yearEl) yearEl.textContent = new Date().getFullYear();
+      }, 100);
+
+      // Animate skill bars on scroll
+      const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.skill-category, .lab-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.5s ease';
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CV - Karthikean Pathmanathan</title>
+    <meta name="description" content="Professional CV and resume of Karthikean Pathmanathan - Cybersecurity Professional" />
+    <link rel="icon" type="image/png" href="../../assets/logo/KP_icon.png" />
+    <link rel="stylesheet" href="../../assets/css/dark.css" />
+    <style>html,body{background:#081024;color:#e6eef6} .container{color:inherit}</style>
+    <style>
+      .cv-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem;
+      }
+      .cv-header {
+        text-align: center;
+        padding: 3rem 0 2rem;
+        border-bottom: 2px solid rgba(96,165,250,0.3);
+        margin-bottom: 3rem;
+      }
+      .cv-header h1 {
+        margin: 0 0 0.5rem;
+        font-size: 2.5rem;
+        color: var(--accent);
+      }
+      .cv-header .tagline {
+        font-size: 1.2rem;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+      .cv-contact {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+      .cv-contact a {
+        color: var(--accent);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .cv-contact a:hover {
+        text-decoration: underline;
+      }
+      .cv-section {
+        margin-bottom: 3rem;
+      }
+      .cv-section-title {
+        font-size: 1.8rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid rgba(96,165,250,0.3);
+      }
+      .cv-summary {
+        line-height: 1.8;
+        color: #d0d8e0;
+        font-size: 1.05rem;
+      }
+      .cv-experience-item,
+      .cv-education-item {
+        background: linear-gradient(180deg,rgba(255,255,255,0.03),transparent);
+        padding: 1.5rem;
+        border-radius: var(--radius);
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+      .cv-experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        gap: 1rem;
+      }
+      .cv-experience-title {
+        flex: 1;
+      }
+      .cv-experience-title h3 {
+        margin: 0 0 0.25rem;
+        color: var(--accent);
+        font-size: 1.3rem;
+      }
+      .cv-experience-company {
+        font-size: 1.05rem;
+        color: #e6eef6;
+        font-weight: 500;
+      }
+      .cv-experience-location {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .cv-experience-date {
+        color: var(--muted);
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+      .cv-experience-description ul {
+        margin: 0.5rem 0;
+        padding-left: 1.5rem;
+        color: #d0d8e0;
+      }
+      .cv-experience-description li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      .skill-group {
+        background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(96,165,250,0.05));
+        padding: 1.25rem;
+        border-radius: var(--radius);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+      .skill-group h4 {
+        color: var(--accent);
+        margin: 0 0 0.75rem;
+        font-size: 1.1rem;
+      }
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .skill-tag {
+        background: rgba(96,165,250,0.15);
+        color: var(--accent);
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        border: 1px solid rgba(96,165,250,0.3);
+      }
+      .cert-item {
+        background: rgba(96,165,250,0.05);
+        padding: 1rem 1.25rem;
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+        border-left: 3px solid var(--accent);
+      }
+      .cert-item h4 {
+        margin: 0 0 0.25rem;
+        color: var(--accent);
+        font-size: 1.05rem;
+      }
+      .cert-item .cert-details {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .cv-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin: 3rem 0;
+        flex-wrap: wrap;
+      }
+      .cv-actions a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(96,165,250,0.1);
+        color: var(--accent);
+        text-decoration: none;
+        border-radius: 8px;
+        border: 1px solid rgba(96,165,250,0.3);
+        transition: all 0.2s;
+        font-weight: 500;
+      }
+      .cv-actions a:hover {
+        background: rgba(96,165,250,0.2);
+        transform: translateY(-2px);
+      }
+      .cv-actions .primary {
+        background: var(--accent);
+        color: #071022;
+        border-color: var(--accent);
+      }
+      .cv-actions .primary:hover {
+        background: #3b82f6;
+      }
+      @media print {
+        body {
+          background: white;
+          color: black;
+        }
+        .site-header, .site-footer, .cv-actions {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header partial will be injected here -->
+    <div id="partial-header"></div>
+
+    <main>
+      <div class="cv-container">
+        
+        <div class="cv-header">
+          <h1>Karthikean Pathmanathan</h1>
+          <div class="tagline">Cybersecurity Student</div>
+          <div class="cv-contact">
+            <a href="mailto:pkartikean@gmail.com"><span>✉️</span> pkartikean@gmail.com</a>
+            <a href="tel:+6012-2095334"><span>📱</span> +60 12-209 5334</a>
+            <a href="https://www.linkedin.com/in/karthikean-pathmanathan/" target="_blank"><span>💼</span> LinkedIn</a>
+            <a href="https://github.com/madebynoturmom" target="_blank"><span>💻</span> GitHub</a>
+          </div>
+        </div>
+
+        <div class="cv-actions">
+          <a href="Karthikean Pathmanathan.pdf" class="primary" download><span>📥</span> Download PDF</a>
+          <a href="Karthikean Pathmanathan.pdf" target="_blank"><span>🖨️</span> Print CV</a>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Professional Summary</h2>
+          <div class="cv-summary">
+            <p>Detail-oriented and driven cybersecurity student with a strong foundation in threat analysis, network security, and risk mitigation. Skilled in identifying vulnerabilities, implementing security protocols, and staying ahead of evolving cyber threats. Passionate about protecting systems and data through a proactive, analytical, and solutions- focused approach. </p>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Education</h2>
+          
+          <div class="cv-education-item">
+            <div class="cv-experience-header">
+              <div class="cv-experience-title">
+                <h3>Bachelors (Hons) in Network Security</h3>
+                <div class="cv-experience-company">Sunway University</div>
+                <div class="cv-experience-location">Malaysia</div>
+              </div>
+              <div class="cv-experience-date">2024 - Present</div>
+            </div>
+          </div>
+
+          <div class="cv-education-item">
+            <div class="cv-experience-header">
+              <div class="cv-experience-title">
+                <h3>Foundation in Arts (FIA)</h3>
+                <div class="cv-experience-company">Sunway University</div>
+                <div class="cv-experience-location">Malaysia</div>
+              </div>
+              <div class="cv-experience-date">2023 - 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Professional Experience</h2>
+          
+          <div class="cv-experience-item">
+            <div class="cv-experience-header">
+              <div class="cv-experience-title">
+                <h3>Cybersecurity Junior Assistant - Part-time student</h3>
+                <div class="cv-experience-company">Cre8IOT SDN BHD</div>
+                <div class="cv-experience-location">Subang Jaya, Malaysia</div>
+              </div>
+              <div class="cv-experience-date">2023 - Present</div>
+            </div>
+            <div class="cv-experience-description">
+              <ul>
+                <li>Assisted in network hardening such as logging, and audit trailing.</li>
+                <li>Ran Nmap scans against staging services and documented remediation steps before pilot rollouts.</li>
+                <li>Participated in security awareness training sessions for employees.</li>
+              </ul>
+            </div>
+          </div>
+
+        <!-- Technical Skills -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Technical Skills</h2>
+          
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h4>Programming & Scripting</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">PowerShell</span>
+                <span class="skill-tag">Bash</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">SQL</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Network Security</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">BurpSuite</span>
+                <span class="skill-tag">Snort</span>
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">tcpdump</span>
+                <span class="skill-tag">pfSense</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Threat Intelligence</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Aircrack-ng</span>
+                <span class="skill-tag">Hydra</span>
+                <span class="skill-tag">Metasploit Framework</span>
+                <span class="skill-tag">Hashcat</span>
+                <span class="skill-tag">OSINT</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Cloud & DevOps</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Incident Response</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">TheHive</span>
+                <span class="skill-tag">Cortex</span>
+                <span class="skill-tag">Forensics</span>
+                <span class="skill-tag">Volatility</span>
+                <span class="skill-tag">Autopsy</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Operating Systems</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">Windows Server</span>
+                <span class="skill-tag">Ubuntu</span>
+                <span class="skill-tag">Debian</span>
+                <span class="skill-tag">BlackArch</span>
+                <span class="skill-tag">Kali Linux</span>
+                <span class="skill-tag">MacOS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Certifications & Training</h2>
+          
+          <div class="cert-item">
+            <h4>CompTIA Security+</h4>
+            <div class="cert-details">In Progress - Expected 2025</div>
+          </div>
+
+          <div class="cert-item">
+            <h4>MITRE ATT&CK Defender (MAD)</h4>
+            <div class="cert-details">MITRE Corporation - ATT&CK Framework Training</div>
+          </div>
+
+          <div class="cert-item">
+            <h4>Splunk Core Certified User</h4>
+            <div class="cert-details">Splunk - SIEM Platform Proficiency</div>
+          </div>
+
+          <div class="cert-item">
+            <h4>TryHackMe SOC Level 1</h4>
+            <div class="cert-details">TryHackMe - Security Operations Center Training Path</div>
+          </div>
+
+          <div class="cert-item">
+            <h4>Blue Team Level 1 (BTL1)</h4>
+            <div class="cert-details">Security Blue Team - Defensive Security Training</div>
+          </div>
+        </div>
+
+        <!-- Key Projects -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Key Projects</h2>
+          
+          <div class="cv-experience-item">
+            <h3>VERO Online Ticketing Platform with Blockchain Smart Contract (2025 - Ongoing)</h3>
+            <div class="skill-tags" style="margin: 0.75rem 0;">
+              <span class="skill-tag">NuxtJs</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">JWT</span>
+              <span class="skill-tag">Bcrypt</span>
+              <span class="skill-tag">FastAPI</span>
+            </div>
+            <ul>
+              <li>Built a FastAPI backend with JWT auth and simple RBAC for online ticketing platform</li>
+              <li>Implemented event creation, ticket purchase, and QR-based entry with single-use, expiring tokens and server-side validation</li>
+              <li>Added user-to-user resale flow: sellers list tickets at fixed +20% markup with full audit trail</li>
+              <li>Enforced state machine for tickets to prevent reuse and block entry for listed/sold tickets</li>
+              <li>Integrated payments and webhook handling to finalize transfers only after confirmed payment</li>
+              <li>Applied security basics: bcrypt password hashing and salting, CORS/secure headers, rate limiting, and role-scoped endpoints</li>
+            </ul>
+          </div>
+
+          <div class="cv-experience-item">
+            <h3>License Plate Recognition System (2025 - Personal Project)</h3>
+            <div class="skill-tags" style="margin: 0.75rem 0;">
+              <span class="skill-tag">Sveltekit</span>
+              <span class="skill-tag">SkeletonUI</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">JWT</span>
+              <span class="skill-tag">SHA-256</span>
+              <span class="skill-tag">GIT</span>
+              <span class="skill-tag">Amazon EC2</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Nginx</span>
+            </div>
+            <ul>
+              <li>JWT auth with hashed and salted passwords for secure authentication</li>
+              <li>Simple RBAC (admin/resident/guards) enforced on API routes</li>
+              <li>Secured Backend database API routes with role-based access control</li>
+              <li>Developed Custom Login Authentication Server for better customization</li>
+              <li>Protected endpoints with role-checks and CORS header with basic rate limiting</li>
+              <li>Wrote clear setup docs and Dockerized the services for easy run/deploy</li>
+            </ul>
+          </div>
+
+          <div class="cv-experience-item">
+            <h3>Linux LAN Infrastructure Project (2025 - Sunway University)</h3>
+            <div class="skill-tags" style="margin: 0.75rem 0;">
+              <span class="skill-tag">RaspIOS</span>
+              <span class="skill-tag">BIND9</span>
+              <span class="skill-tag">ISC-DHCP</span>
+              <span class="skill-tag">Apache</span>
+              <span class="skill-tag">hostapd</span>
+              <span class="skill-tag">UFW</span>
+              <span class="skill-tag">Bash</span>
+            </div>
+            <ul>
+              <li>Configure Web Server for a simulated LAN environment supporting DHCP, DNS, wireless access point using BIND9 on RaspIOS in Raspberry Pi 5</li>
+              <li>Applied NAT and basic firewall rules for secure internet access; documented setup and troubleshooting steps for repeatable deployment</li>
+              <li>Custom scripting for routine services and automated network management</li>
+            </ul>
+          </div>
+
+          <div class="cv-experience-item">
+            <h3>AI Stock Market Analysis (2025 - Personal Project)</h3>
+            <div class="skill-tags" style="margin: 0.75rem 0;">
+              <span class="skill-tag">Alpha Vantage API</span>
+              <span class="skill-tag">Numpy</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Fast API</span>
+              <span class="skill-tag">OpenVINO</span>
+            </div>
+            <ul>
+              <li>Developed an AI model to analyze stock market trends using Neural Processing Units (NPUs) for real-time data processing and on-edge processing</li>
+              <li>Utilized machine learning algorithms to identify patterns and forecast stock movements based on historical and live market data</li>
+              <li>Focused on performance optimization and hardware acceleration by leveraging NPU capabilities for efficient inference tasks</li>
+            </ul>
+          </div>
+
+          <div class="cv-experience-item">
+            <h3>Restaurant Management System (2024 - Sunway University)</h3>
+            <div class="skill-tags" style="margin: 0.75rem 0;">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Command-line Interface</span>
+              <span class="skill-tag">Data Processing</span>
+            </div>
+            <ul>
+              <li>Built a lightweight Restaurant Management system to manage food orders, order management, and admin-side access</li>
+              <li>Designed an intuitive command-line Interface and integrated on-edge data processing to enable real-time tracking without requiring an internet connection</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- footer partial will be injected here -->
+    <div id="partial-footer"></div>
+
+    <script>
+      // Load partials
+      async function loadPartial(id, url){
+        try {
+          const res = await fetch(url);
+          if(!res.ok) throw new Error('Failed to load ' + url);
+          const html = await res.text();
+          document.getElementById(id).innerHTML = html;
+        } catch (err) {
+          console.error(err);
+        }
+      }
+
+      loadPartial('partial-header', '../../partial/header.html');
+      loadPartial('partial-footer', '../../partial/footer.html');
+
+      // Year in footer
+      setTimeout(() => {
+        const yearEl = document.getElementById('year');
+        if(yearEl) yearEl.textContent = new Date().getFullYear();
+      }, 100);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Interactive Portfolio</title>
+    <meta name="description" content="Interactive portfolio built with HTML, CSS and JS - deploys to GitHub Pages." />
+    <link rel="icon" type="image/png" href="assets/logo/KP_icon.png" />
+  <!-- Dark theme stylesheet (site is dark-only) -->
+  <link rel="stylesheet" href="assets/css/dark.css" />
+  <!-- Inline fallback to enforce dark background on first paint if other styles are present -->
+  <style>
+    html,body{background:#081024;color:#e6eef6} .container{color:inherit}
+    
+    /* Typing Animation Styles */
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero-title .accent {
+      background: linear-gradient(90deg, #8b5cf6, #a78bfa, #60a5fa, #8b5cf6, #a78bfa);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-flow 4s linear infinite;
+    }
+    @keyframes gradient-flow {
+      0% {
+        background-position: 0% center;
+      }
+      100% {
+        background-position: 200% center;
+      }
+    }
+    .hero-subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #e6eef6;
+      min-height: 2.5rem;
+    }
+    .typing-prefix {
+      color: var(--muted);
+    }
+    .typing-text {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .typing-cursor {
+      color: var(--accent);
+      animation: blink 1s infinite;
+      font-weight: 300;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Matrix Background Animation - Full Page */
+    main {
+      position: relative;
+    }
+    .matrix-bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .hero, .about, .tech-stack-section, .featured-projects-section {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 820px) {
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* Tech Stack Section */
+    .tech-stack-section {
+      padding: 4rem 0;
+      background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.03), transparent);
+    }
+    .tech-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .tech-category {
+      background: rgba(11, 18, 32, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      transition: all 0.3s ease;
+    }
+    .tech-category:hover {
+      transform: translateY(-5px);
+      border-color: rgba(139, 92, 246, 0.4);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .category-icon {
+      font-size: 1rem;
+      font-weight: 700;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(139, 92, 246, 0.2);
+      border: 2px solid rgba(139, 92, 246, 0.5);
+      border-radius: 8px;
+      color: var(--accent);
+    }
+    .category-header h4 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    .tech-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .tech-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: rgba(15, 23, 36, 0.8);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .tech-item:hover {
+      background: rgba(139, 92, 246, 0.1);
+      transform: translateX(5px);
+    }
+    .tech-item-icon {
+      font-size: 0.6rem;
+      width: 8px;
+      height: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tech-item span {
+      color: #e6eef6;
+      font-weight: 500;
+    }
+
+    /* Featured Projects Section */
+    .featured-projects-section {
+      padding: 4rem 0;
+    }
+    .featured-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .featured-project-card {
+      background: rgba(11, 18, 32, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .featured-project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(139, 92, 246, 0.5);
+      box-shadow: 0 12px 40px rgba(139, 92, 246, 0.3);
+    }
+    .project-thumbnail {
+      height: 180px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(167, 139, 250, 0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+    }
+    .thumbnail-placeholder {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .thumbnail-placeholder .placeholder-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(139, 92, 246, 0.2);
+      border: 2px solid rgba(139, 92, 246, 0.5);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .featured-project-content {
+      padding: 1.5rem;
+    }
+    .featured-project-content h4 {
+      margin: 0 0 1rem;
+      color: var(--accent);
+      font-size: 1.25rem;
+    }
+    .featured-project-content p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .featured-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .mini-tech-tag {
+      padding: 0.35rem 0.75rem;
+      background: rgba(139, 92, 246, 0.15);
+      color: var(--accent);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+    .featured-project-content .btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      .tech-categories {
+        grid-template-columns: 1fr;
+      }
+      .featured-projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <!-- header partial will be injected here -->
+    <div id="partial-header"></div>
+
+    <main>
+      <canvas id="matrixCanvas" class="matrix-bg-canvas"></canvas>
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <div>
+            <h1 class="hero-title">Hi, I'm <span class="accent">Karthikean Pathmanathan</span></h1>
+            <p class="hero-subtitle">
+              <span class="typing-prefix">Hacking </span>
+              <span class="typing-text" id="typingText"></span>
+              <span class="typing-cursor">|</span>
+            </p>
+            <p class="lead">Purple Team focus: incident response, detection engineering, and red/blue collaboration.</p>
+            <div class="hero-ctas">
+              <a class="cta" href="/pages/cv/">View my CV</a>
+              <a class="btn" href="/pages/projects/">See Projects</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container">
+          <h3>About Me</h3>
+          <p>I'm a cybersecurity professional specializing in Purple Team operations with a strong focus on bridging offensive and defensive security. My expertise spans SIEM deployment, detection engineering, threat intelligence, and incident response. I'm passionate about developing innovative security solutions and continuously improving organizational security posture through data-driven approaches and automation.</p>
+          <p>With hands-on experience in enterprise security operations, I've deployed and optimized SIEM platforms, developed custom detection rules, and built automated incident response frameworks. I believe in collaborative security through purple team exercises that validate and enhance defensive capabilities.</p>
+        </div>
+      </section>
+
+      <!-- Tech Stack Section -->
+      <section class="tech-stack-section">
+        <div class="container">
+          <h2 style="text-align:center;margin-bottom:3rem;color:var(--accent);font-size:2.5rem;">Tech Stack & Tools</h2>
+          
+          <div class="tech-categories">
+            <!-- Offensive Security -->
+            <div class="tech-category">
+              <div class="category-header">
+                <span class="category-icon">[O]</span>
+                <h4>Offensive Security</h4>
+              </div>
+              <div class="tech-items">
+                <div class="tech-item">
+                  <div class="tech-item-icon">🔴</div>
+                  <span>Metasploit</span>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-item-icon">🔴</div>
+                  <span>Burp Suite</span>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-item-icon">🔴</div>
+                  <span>Nmap</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Defensive Security -->
+            <div class="tech-category">
+              <div class="category-header">
+                <span class="category-icon">[D]</span>
+                <h4>Defensive Security</h4>
+              </div>
+              <div class="tech-items">
+                <div class="tech-item">
+                  <div class="tech-item-icon">🔵</div>
+                  <span>Splunk</span>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-item-icon">🔵</div>
+                  <span>ELK Stack</span>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-item-icon">🔵</div>
+                  <span>Wireshark</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Programming Languages -->
+            <div class="tech-category">
+              <div class="category-header">
+                <span class="category-icon">[P]</span>
+                <h4>Programming</h4>
+              </div>
+              <div class="tech-items">
+                <div class="tech-item">
+                  <div class="tech-item-icon">🟣</div>
+                  <span>Python</span>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-item-icon">🟣</div>
+                  <span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-item-icon">🟣</div>
+                  <span>Bash</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Infrastructure -->
+            <div class="tech-category">
+              <div class="category-header">
+                <span class="category-icon">🏗️</span>
+                <h4>Infrastructure</h4>
+              </div>
+              <div class="tech-items">
+                <div class="tech-item">
+                  <div class="tech-item-icon">🟢</div>
+                  <span>Docker</span>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-item-icon">🟢</div>
+                  <span>Linux</span>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-item-icon">🟢</div>
+                  <span>AWS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects Section -->
+      <section class="featured-projects-section">
+        <div class="container">
+          <h1 style="text-align:center;margin-bottom:1rem;color:var(--accent);">Featured Projects</h1>          
+          <div class="featured-projects-grid">
+            <!-- VERO Ticketing Platform -->
+            <div class="featured-project-card">
+              <div class="project-thumbnail">
+                <div class="thumbnail-placeholder">
+                  <div class="placeholder-icon">VT</div>
+                  <span>VERO Ticketing</span>
+                </div>
+              </div>
+              <div class="featured-project-content">
+                <h4>VERO Online Ticketing Platform</h4>
+                <p>Full-stack ticketing platform with blockchain integration, featuring JWT authentication, QR-based entry validation, and secure user-to-user resale marketplace.</p>
+                <div class="featured-tech-tags">
+                  <span class="mini-tech-tag">NuxtJs</span>
+                  <span class="mini-tech-tag">FastAPI</span>
+                  <span class="mini-tech-tag">PostgreSQL</span>
+                  <span class="mini-tech-tag">JWT</span>
+                </div>
+                <a href="/pages/projects/" class="btn">Learn More →</a>
+              </div>
+            </div>
+
+            <!-- License Plate Recognition -->
+            <div class="featured-project-card">
+              <div class="project-thumbnail">
+                <div class="thumbnail-placeholder">
+                  <div class="placeholder-icon">LPR</div>
+                  <span>License Plate Recognition</span>
+                </div>
+              </div>
+              <div class="featured-project-content">
+                <h4>License Plate Recognition System</h4>
+                <p>Real-time license plate detection and recognition system using OpenCV and Tesseract OCR, with automated database logging and RESTful API integration.</p>
+                <div class="featured-tech-tags">
+                  <span class="mini-tech-tag">Python</span>
+                  <span class="mini-tech-tag">OpenCV</span>
+                  <span class="mini-tech-tag">Sveltekit</span>
+                  <span class="mini-tech-tag">Docker</span>
+                </div>
+                <a href="/pages/projects/" class="btn">Learn More →</a>
+              </div>
+            </div>
+
+            <!-- AI Stock Market Analysis -->
+            <div class="featured-project-card">
+              <div class="project-thumbnail">
+                <div class="thumbnail-placeholder">
+                  <div class="placeholder-icon">AI</div>
+                  <span>AI Stock Analysis</span>
+                </div>
+              </div>
+              <div class="featured-project-content">
+                <h4>AI Stock Market Analysis</h4>
+                <p>Machine learning model leveraging NPU acceleration for real-time stock market trend analysis, pattern identification, and movement forecasting with on-edge processing.</p>
+                <div class="featured-tech-tags">
+                  <span class="mini-tech-tag">Python</span>
+                  <span class="mini-tech-tag">Scikit-learn</span>
+                  <span class="mini-tech-tag">OpenVINO</span>
+                  <span class="mini-tech-tag">FastAPI</span>
+                </div>
+                <a href="/pages/projects/" class="btn">Learn More →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer partial will be injected here -->
+    <div id="partial-footer"></div>
+
+    <script>
+      // Simple partial loader: fetches HTML fragments and injects them.
+      async function loadPartial(id, url){
+        try {
+          const res = await fetch(url);
+          if(!res.ok) throw new Error('Failed to load ' + url);
+          const html = await res.text();
+          document.getElementById(id).innerHTML = html;
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      // Load header and footer before main script runs
+      loadPartial('partial-header', 'partial/header.html');
+      loadPartial('partial-footer', 'partial/footer.html');
+
+      // Typing Animation
+      const words = ['Ethically', 'Securely', 'Defensively', 'Offensively', 'Intelligently', 'Proactively'];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typingSpeed = 150;
+
+      function typeWord() {
+        const typingElement = document.getElementById('typingText');
+        if (!typingElement) return;
+
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+          typingElement.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          typingSpeed = 100;
+        } else {
+          typingElement.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+          typingSpeed = 150;
+        }
+
+        if (!isDeleting && charIndex === currentWord.length) {
+          // Pause at end of word
+          typingSpeed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          typingSpeed = 500;
+        }
+
+        setTimeout(typeWord, typingSpeed);
+      }
+
+      // Start typing animation after a short delay
+      setTimeout(typeWord, 1000);
+
+      // Matrix Rain Background Animation
+      const canvas = document.getElementById('matrixCanvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size
+        function resizeCanvas() {
+          canvas.width = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Matrix characters - binary, hex, and cyber symbols
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01010101ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        // Cybersecurity themed colors - purple to blue gradient
+        function draw() {
+          ctx.fillStyle = 'rgba(8, 16, 36, 0.05)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          ctx.font = fontSize + 'px monospace';
+
+          for (let i = 0; i < drops.length; i++) {
+            // Random character
+            const text = chars[Math.floor(Math.random() * chars.length)];
+            
+            // Purple to blue gradient for cybersecurity theme
+            const hue = 250 + Math.random() * 30; // Purple to blue range
+            const brightness = 50 + Math.random() * 30;
+            ctx.fillStyle = `hsl(${hue}, 80%, ${brightness}%)`;
+            
+            // Draw character
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            // Randomly reset drop to top
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+
+            drops[i]++;
+          }
+        }
+
+        // Animate at 30fps for smooth performance
+        setInterval(draw, 33);
+      }
+    </script>
+    <script src="assets/main.js" defer></script>
+  </body>
+</html>

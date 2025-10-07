@@ -1,0 +1,451 @@
+<!  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects - Karthikean Pathmanathan</title>
+    <meta name="description" content="Cybersecurity projects and implementations by Karthikean Pathmanathan" />
+    <link rel="icon" type="image/png" href="../../assets/logo/KP_icon.png" />
+    <link rel="stylesheet" href="../../assets/css/dark.css" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects - Karthikean Pathmanathan</title>
+    <meta name="description" content="Projects and implementations by Karthikean Pathmanathan" />
+    <link rel="stylesheet" href="../../assets/css/dark.css" />
+    <style>html,body{background:#081024;color:#e6eef6} .container{color:inherit}</style>
+    <style>
+      .page-header {
+        padding: 3rem 0 2rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .page-header h1 {
+        margin: 0 0 0.5rem;
+        font-size: 2.5rem;
+        color: var(--accent);
+      }
+      .page-header p {
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .project-section {
+        padding: 3rem 0;
+      }
+      .project-card {
+        background: linear-gradient(180deg,rgba(255,255,255,0.03),transparent);
+        padding: 2rem;
+        border-radius: var(--radius);
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .project-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(96,165,250,0.1);
+        border-color: rgba(96,165,250,0.3);
+      }
+      .project-card h3 {
+        color: var(--accent);
+        margin: 0 0 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .project-badge {
+        display: inline-block;
+        background: rgba(96,165,250,0.15);
+        color: var(--accent);
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-left: auto;
+      }
+      .project-meta {
+        display: flex;
+        gap: 1.5rem;
+        margin: 1rem 0;
+        flex-wrap: wrap;
+      }
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .meta-item strong {
+        color: #e6eef6;
+      }
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+      .tech-tag {
+        background: rgba(255,255,255,0.05);
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        color: var(--muted);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+      .project-description {
+        line-height: 1.7;
+        color: #d0d8e0;
+        margin: 1rem 0;
+      }
+      .project-highlights {
+        margin: 1.5rem 0;
+      }
+      .project-highlights h4 {
+        margin: 0 0 0.75rem;
+        font-size: 1rem;
+        color: #e6eef6;
+      }
+      .project-highlights ul {
+        margin: 0;
+        padding-left: 1.5rem;
+        color: var(--muted);
+      }
+      .project-highlights li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+      .project-links {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .project-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(96,165,250,0.1);
+        color: var(--accent);
+        text-decoration: none;
+        border-radius: 8px;
+        border: 1px solid rgba(96,165,250,0.3);
+        transition: background 0.2s;
+      }
+      .project-links a:hover {
+        background: rgba(96,165,250,0.2);
+      }
+      .project-links a img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(67%) sepia(60%) saturate(466%) hue-rotate(187deg) brightness(103%) contrast(96%);
+      }
+      .project-links a:hover img {
+        filter: brightness(0) saturate(100%) invert(67%) sepia(80%) saturate(466%) hue-rotate(187deg) brightness(110%) contrast(96%);
+      }
+      .filter-tabs {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .filter-tab {
+        padding: 0.5rem 1.5rem;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
+        color: var(--muted);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .filter-tab:hover {
+        background: rgba(255,255,255,0.06);
+        border-color: rgba(96,165,250,0.3);
+      }
+      .filter-tab.active {
+        background: rgba(96,165,250,0.15);
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header partial will be injected here -->
+    <div id="partial-header"></div>
+
+    <main>
+      <div class="page-header">
+        <div class="container">
+          <h1>Projects & Implementations</h1>
+          <p>Software development projects spanning web applications, system infrastructure, AI/ML, and automation</p>
+        </div>
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All Projects</button>
+        <button class="filter-tab" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-tab" data-filter="aiml">AI/ML</button>
+        <button class="filter-tab" data-filter="system">System Design</button>
+      </div>
+
+      <section class="project-section">
+        <div class="container">
+          
+          <!-- VERO Online Ticketing Platform -->
+          <article class="project-card" data-category="fullstack">
+            <h3>
+              VERO Online Ticketing Platform with Blockchain Smart Contract
+              <span class="project-badge">Ongoing</span>
+            </h3>
+            <div class="project-meta">
+              <div class="meta-item">
+                <strong>Year:</strong> 2025
+              </div>
+              <div class="meta-item">
+                <strong>Type:</strong> Commercial Project
+              </div>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">NuxtJs</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">JWT</span>
+              <span class="tech-tag">Bcrypt</span>
+              <span class="tech-tag">FastAPI</span>
+            </div>
+            <div class="project-description">
+              <p>Built a FastAPI backend with JWT auth and simple RBAC for an online ticketing platform with blockchain smart contract integration. Implemented comprehensive event management, secure ticket purchasing with QR-based entry, and user-to-user resale marketplace.</p>
+            </div>
+            <div class="project-highlights">
+              <h4>Key Features:</h4>
+              <ul>
+                <li>Built a FastAPI backend with JWT auth and simple RBAC</li>
+                <li>Implemented event creation, ticket purchase, and QR-based entry with single-use, expiring tokens and server-side validation</li>
+                <li>Added a user-to-user resale flow: sellers list tickets at a fixed +20% markup, buyers purchase, and ownership transfers with full audit trail</li>
+                <li>Enforced state machine for tickets to prevent reuse and block entry for listed/sold tickets</li>
+                <li>Integrated payments and wrote webhook handling to finalize transfers only after confirmed payment</li>
+                <li>Applied security basics: bcrypt password hashing and salting, CORS/secure headers, rate limiting, and role-scoped endpoints</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="#"><img src="../../assets/icons/github.svg" alt="GitHub" /> GitHub</a>
+              <a href="#"><img src="../../assets/icons/documentation.svg" alt="Documentation" /> Documentation</a>
+            </div>
+          </article>
+
+          <!-- License Plate Recognition System -->
+          <article class="project-card" data-category="fullstack">
+            <h3>
+              License Plate Recognition System
+              <span class="project-badge">Personal</span>
+            </h3>
+            <div class="project-meta">
+              <div class="meta-item">
+                <strong>Year:</strong> 2025
+              </div>
+              <div class="meta-item">
+                <strong>Type:</strong> Personal Project
+              </div>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">Sveltekit</span>
+              <span class="tech-tag">SkeletonUI</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">JWT</span>
+              <span class="tech-tag">SHA-256</span>
+              <span class="tech-tag">GIT</span>
+              <span class="tech-tag">Amazon EC2</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Nginx</span>
+            </div>
+            <div class="project-description">
+              <p>Developed a comprehensive license plate recognition system with JWT authentication and role-based access control (RBAC) for admin/resident/guards. Implemented secure backend with custom login authentication server and API route protection.</p>
+            </div>
+            <div class="project-highlights">
+              <h4>Key Features:</h4>
+              <ul>
+                <li>JWT auth with hashed and salted passwords for secure authentication</li>
+                <li>Simple RBAC (admin/resident/guards) enforced on API routes</li>
+                <li>Secured Backend database API routes with role-based access control</li>
+                <li>Developed Custom Login Authentication Server for better customization</li>
+                <li>Protected endpoints with role-checks and CORS header with basic rate limiting</li>
+                <li>Wrote clear setup docs and Dockerized the services for easy run/deploy</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="#"><img src="../../assets/icons/github.svg" alt="GitHub" /> GitHub</a>
+              <a href="#"><img src="../../assets/icons/documentation.svg" alt="Documentation" /> Documentation</a>
+            </div>
+          </article>
+
+          <!-- Linux Lan Infrastructure Project -->
+          <article class="project-card" data-category="system">
+            <h3>
+              Linux LAN Infrastructure Project
+              <span class="project-badge">University</span>
+            </h3>
+            <div class="project-meta">
+              <div class="meta-item">
+                <strong>Year:</strong> 2025
+              </div>
+              <div class="meta-item">
+                <strong>Institution:</strong> Sunway University
+              </div>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">RaspIOS</span>
+              <span class="tech-tag">BIND9</span>
+              <span class="tech-tag">ISC-DHCP</span>
+              <span class="tech-tag">Apache</span>
+              <span class="tech-tag">hostapd</span>
+              <span class="tech-tag">UFW</span>
+              <span class="tech-tag">Bash</span>
+            </div>
+            <div class="project-description">
+              <p>Configured Web Server for a simulated LAN environment supporting DHCP, DNS, and wireless access point using BIND9 on RaspIOS in Raspberry Pi 5. Implemented comprehensive network infrastructure with secure internet access.</p>
+            </div>
+            <div class="project-highlights">
+              <h4>Key Features:</h4>
+              <ul>
+                <li>Configure Web Server for a simulated LAN environment supporting DHCP, DNS, wireless access point using BIND9 on RaspIOS in Raspberry Pi 5</li>
+                <li>Applied NAT and basic firewall rules for secure internet access; documented setup and troubleshooting steps for repeatable deployment</li>
+                <li>Custom scripting for routine services and automated network management</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="#"><img src="../../assets/icons/documentation.svg" alt="Documentation" /> Documentation</a>
+              <a href="#"><img src="../../assets/icons/github.svg" alt="GitHub" /> GitHub</a>
+            </div>
+          </article>
+
+          <!-- AI Stock Market Analysis -->
+          <article class="project-card" data-category="aiml">
+            <h3>
+              AI Stock Market Analysis
+              <span class="project-badge">Personal</span>
+            </h3>
+            <div class="project-meta">
+              <div class="meta-item">
+                <strong>Year:</strong> 2025
+              </div>
+              <div class="meta-item">
+                <strong>Type:</strong> Personal Project
+              </div>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">Alpha Vantage API</span>
+              <span class="tech-tag">Numpy</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Fast API</span>
+              <span class="tech-tag">OpenVINO</span>
+            </div>
+            <div class="project-description">
+              <p>Developed an AI model to analyze stock market trends using Neural Processing Units (NPUs) for real-time data processing and on-edge processing. Leveraged machine learning algorithms for pattern identification and stock movement forecasting.</p>
+            </div>
+            <div class="project-highlights">
+              <h4>Key Features:</h4>
+              <ul>
+                <li>Developed an AI model to analyze stock market trends using Neural Processing Units (NPUs) for real-time data processing and on-edge processing</li>
+                <li>Utilized machine learning algorithms to identify patterns and forecast stock movements based on historical and live market data</li>
+                <li>Focused on performance optimization and hardware acceleration by leveraging NPU capabilities for efficient inference tasks</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="#"><img src="../../assets/icons/github.svg" alt="GitHub" /> GitHub</a>
+              <a href="#"><img src="../../assets/icons/demo.png" alt="Demo" /> Demo</a>
+            </div>
+          </article>
+
+          <!-- Restaurant Management System -->
+          <article class="project-card" data-category="system">
+            <h3>
+              Restaurant Management System
+              <span class="project-badge">University</span>
+            </h3>
+            <div class="project-meta">
+              <div class="meta-item">
+                <strong>Year:</strong> 2024
+              </div>
+              <div class="meta-item">
+                <strong>Institution:</strong> Sunway University
+              </div>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Command-line Interface</span>
+              <span class="tech-tag">Data Processing</span>
+            </div>
+            <div class="project-description">
+              <p>Built a lightweight Restaurant Management system to manage food orders, order management, and admin-side access. Designed with an intuitive command-line interface and integrated on-edge data processing for real-time tracking without internet connectivity.</p>
+            </div>
+            <div class="project-highlights">
+              <h4>Key Features:</h4>
+              <ul>
+                <li>Built a lightweight Restaurant Management system to manage food orders, order management, and admin-side access</li>
+                <li>Designed an intuitive command-line Interface and integrated on-edge data processing to enable real-time tracking without requiring an internet connection</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="#"><img src="../../assets/icons/github.svg" alt="GitHub" /> GitHub</a>
+              <a href="#"><img src="../../assets/icons/documentation.svg" alt="Documentation" /> Documentation</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- footer partial will be injected here -->
+    <div id="partial-footer"></div>
+
+    <script>
+      // Load partials
+      async function loadPartial(id, url){
+        try {
+          const res = await fetch(url);
+          if(!res.ok) throw new Error('Failed to load ' + url);
+          const html = await res.text();
+          document.getElementById(id).innerHTML = html;
+        } catch (err) {
+          console.error(err);
+        }
+      }
+
+      loadPartial('partial-header', '../../partial/header.html');
+      loadPartial('partial-footer', '../../partial/footer.html');
+
+      // Year in footer
+      setTimeout(() => {
+        const yearEl = document.getElementById('year');
+        if(yearEl) yearEl.textContent = new Date().getFullYear();
+      }, 100);
+
+      // Filter functionality
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const filter = tab.dataset.filter;
+          
+          // Update active tab
+          filterTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          // Filter projects
+          projectCards.forEach(card => {
+            if (filter === 'all') {
+              card.style.display = 'block';
+            } else {
+              const categories = card.dataset.category.split(' ');
+              card.style.display = categories.includes(filter) ? 'block' : 'none';
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
