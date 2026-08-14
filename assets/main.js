@@ -106,9 +106,22 @@ function initNavToggle(){
   const btn = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   btn.addEventListener('click', ()=>{
-    const open = nav.style.display === 'flex';
-    nav.style.display = open ? '' : 'flex';
+    nav.classList.toggle('active');
   })
+}
+
+function setActiveNavLink(){
+  const normalizePath = (path) => path.replace(/index\.html$/i, '').replace(/\/$/, '/') || '/';
+  const currentPath = normalizePath(window.location.pathname);
+  document.querySelectorAll('.nav a').forEach((link) => {
+    const linkPath = normalizePath(new URL(link.href, window.location.origin).pathname);
+    const isActive = currentPath === linkPath;
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
 }
 
 function init(){
@@ -121,6 +134,7 @@ function init(){
   // Wait for header/footer partials to be injected, then initialize nav
   waitForElement('.nav').then(()=>{
     initNavToggle();
+    setActiveNavLink();
   }).catch(()=>{});
 }
 

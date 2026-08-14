@@ -5,9 +5,9 @@ This repository contains a minimal, responsive, and interactive portfolio templa
 Quick start
 
 1. Edit content
+
    - Update `index.html` with your name and content.
    - Add or edit projects in `assets/main.js` inside the `projects` array.
-
 2. Preview locally
 
    You can use a simple static server. With Python 3:
@@ -21,20 +21,17 @@ Quick start
    ```bash
    npx http-server -c-1 .
    ```
-
 3. Deploy to GitHub Pages
 
    - Option A (recommended): Create a `gh-pages` branch and push the built static site there, or keep the `main` branch and enable GitHub Pages from the repository settings using the `/docs` folder. For this template, you can place files in `/docs` and enable Pages from `main` -> `/docs`.
-
    - Option B: Use GitHub Action to push to `gh-pages` on commit.
 
 Files
 
 - `index.html` - Main site
- - `index.html` - Main site
- - `assets/css/dark.css` - Dark theme stylesheet (site is dark-only)
- - `assets/main.js` - JavaScript and project data
-
+- `index.html` - Main site
+- `assets/css/dark.css` - Dark theme stylesheet (site is dark-only)
+- `assets/main.js` - JavaScript and project data
 - `pages/cv/index.html` - CV subpage (replace placeholders with content extracted from your CV)
 
 CV / Resume
