@@ -11,9 +11,10 @@
       html,
       body {
         background:
-          radial-gradient(900px 500px at 10% 0%, rgba(45, 212, 191, 0.12), transparent 58%),
-          radial-gradient(780px 420px at 90% 10%, rgba(91, 140, 255, 0.18), transparent 55%),
-          linear-gradient(180deg, #071019 0%, #050b13 55%, #07131c 100%);
+          radial-gradient(980px 560px at 12% 8%, rgba(91, 140, 255, 0.2), transparent 56%),
+          radial-gradient(780px 460px at 88% 16%, rgba(45, 212, 191, 0.14), transparent 54%),
+          radial-gradient(560px 360px at 50% 100%, rgba(251, 191, 36, 0.08), transparent 45%),
+          linear-gradient(180deg, #06111b 0%, #050b13 50%, #071722 100%);
         color: #e7edf7;
       }
 
@@ -24,6 +25,24 @@
       .contact-page {
         padding: 3rem 0 4rem;
         min-height: calc(100vh - 10rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-page::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(720px 420px at 16% 18%, rgba(125, 211, 252, 0.06), transparent 55%),
+          radial-gradient(520px 320px at 84% 12%, rgba(91, 140, 255, 0.08), transparent 52%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.02));
+      }
+
+      .contact-shell {
+        position: relative;
+        z-index: 1;
       }
 
       .contact-shell {
@@ -35,17 +54,19 @@
       .contact-hero,
       .contact-grid,
       .contact-note {
-        background: rgba(12, 20, 34, 0.84);
-        border: 1px solid rgba(148, 163, 184, 0.16);
+        background: rgba(8, 14, 25, 0.18);
+        border: 1px solid rgba(148, 163, 184, 0.14);
         border-radius: 24px;
-        box-shadow: 0 18px 60px rgba(2, 6, 23, 0.34);
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
       }
 
       .contact-hero {
-        padding: 1.9rem;
+        padding: 2rem;
         margin-bottom: 1.5rem;
+        background:
+          linear-gradient(135deg, rgba(91, 140, 255, 0.14), rgba(45, 212, 191, 0.08) 42%, rgba(8, 14, 25, 0.14) 100%);
       }
 
       .contact-hero h1 {
@@ -86,14 +107,17 @@
         display: grid;
         grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
         gap: 1.5rem;
-        padding: 1.25rem;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
       }
 
       .contact-panel {
         padding: 1.4rem;
         border-radius: 20px;
         border: 1px solid rgba(148, 163, 184, 0.16);
-        background: linear-gradient(180deg, rgba(16, 24, 39, 0.92), rgba(10, 18, 31, 0.9));
+        background: rgba(10, 18, 31, 0.55);
       }
 
       .section-eyebrow {
@@ -281,6 +305,7 @@
       .contact-note {
         margin-top: 1.5rem;
         padding: 1.25rem 1.4rem;
+        background: linear-gradient(135deg, rgba(45, 212, 191, 0.08), rgba(91, 140, 255, 0.12));
       }
 
       .contact-note strong {
