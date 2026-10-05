@@ -5,425 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>CV - Karthikean Pathmanathan</title>
     <meta name="description" content="Professional CV and resume of Karthikean Pathmanathan - Cybersecurity Professional" />
-    <link rel="icon" type="image/png" href="/CV/assets/logo/KP_icon.png" />
-    <link rel="stylesheet" href="/CV/assets/css/dark.css" />
-    <style>
-      html,
-      body {
-        background:
-          radial-gradient(circle at top left, rgba(96, 165, 250, 0.12), transparent 28%),
-          radial-gradient(circle at top right, rgba(15, 118, 110, 0.08), transparent 24%),
-          linear-gradient(180deg, #08111f 0%, #050b14 58%, #07111d 100%);
-        color: #e6eef6;
-      }
+    <link rel="icon" type="image/png" href="../../assets/logo/KP_icon.png" />
+    <link rel="stylesheet" href="../../assets/css/portfolio.css" />
+    <link rel="stylesheet" href="../../assets/css/home.css" />
 
-      .container {
-        color: inherit;
-      }
-
-      .cv-page {
-        padding: 2rem 0 4rem;
-      }
-
-      .cv-shell {
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 0 1.25rem;
-      }
-
-      .cv-panel {
-        background: rgba(11, 18, 32, 0.82);
-        border: 1px solid rgba(148, 163, 184, 0.14);
-        border-radius: 20px;
-        box-shadow: 0 24px 70px rgba(2, 6, 23, 0.45);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-      }
-
-      .cv-hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-        gap: 1.5rem;
-        align-items: stretch;
-      }
-
-      .cv-hero-copy,
-      .cv-profile-card,
-      .cv-section-panel {
-        padding: 1.75rem;
-      }
-
-      .eyebrow {
-        margin: 0 0 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        font-size: 0.76rem;
-        color: #93c5fd;
-      }
-
-      .cv-hero-copy h1 {
-        margin: 0;
-        font-size: clamp(2.25rem, 4vw, 3.75rem);
-        line-height: 1.05;
-        letter-spacing: -0.03em;
-      }
-
-      .cv-role {
-        margin: 1rem 0 0.8rem;
-        font-size: 1.1rem;
-        color: #cbd5e1;
-      }
-
-      .cv-summary {
-        margin: 0;
-        max-width: 62ch;
-        line-height: 1.75;
-        color: #d7e2ee;
-        font-size: 1.02rem;
-      }
-
-      .cv-actions {
-        display: flex;
-        gap: 0.8rem;
-        flex-wrap: wrap;
-        margin-top: 1.5rem;
-      }
-
-      .cv-actions a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.78rem 1.15rem;
-        border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.22);
-        color: #e6eef6;
-        text-decoration: none;
-        font-weight: 600;
-        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-        background: rgba(15, 23, 42, 0.72);
-      }
-
-      .cv-actions a:hover {
-        transform: translateY(-1px);
-        border-color: rgba(147, 197, 253, 0.45);
-        background: rgba(15, 23, 42, 0.9);
-      }
-
-      .cv-actions .primary {
-        background: linear-gradient(135deg, #60a5fa, #3b82f6);
-        color: #08111f;
-        border-color: transparent;
-      }
-
-      .cv-actions .primary:hover {
-        background: linear-gradient(135deg, #7cb6ff, #4f8cff);
-      }
-
-      .cv-profile-card h2,
-      .section-title {
-        margin: 0 0 1rem;
-        font-size: 1.15rem;
-        letter-spacing: -0.01em;
-      }
-
-      .cv-info-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 0.5rem;
-      }
-
-      .cv-info-table th,
-      .cv-info-table td {
-        padding: 0.9rem 0;
-        vertical-align: top;
-        border-bottom: 1px solid rgba(148, 163, 184, 0.14);
-        text-align: left;
-      }
-
-      .cv-info-table th {
-        width: 34%;
-        color: #93c5fd;
-        font-weight: 600;
-        padding-right: 1rem;
-      }
-
-      .cv-info-table td {
-        color: #d7e2ee;
-      }
-
-      .cv-info-table a {
-        color: #93c5fd;
-        text-decoration: none;
-      }
-
-      .cv-info-table a:hover {
-        text-decoration: underline;
-      }
-
-      .cv-section {
-        margin-top: 1.5rem;
-      }
-
-      .cv-section-panel {
-        padding: 1.75rem;
-      }
-
-      .section-head {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .section-head h2 {
-        margin: 0;
-        font-size: clamp(1.4rem, 2vw, 1.8rem);
-        letter-spacing: -0.02em;
-      }
-
-      .section-head p {
-        margin: 0;
-        color: #93c5fd;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        font-size: 0.76rem;
-      }
-
-      .cv-highlights {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
-      }
-
-      .cv-highlight,
-      .cv-entry,
-      .skill-group,
-      .cert-item {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
-        border: 1px solid rgba(148, 163, 184, 0.12);
-        border-radius: 18px;
-      }
-
-      .cv-highlight {
-        padding: 1.25rem;
-      }
-
-      .cv-highlight h3,
-      .cv-entry h3,
-      .skill-group h4,
-      .cert-item h4 {
-        margin: 0 0 0.45rem;
-        color: #eaf2fb;
-      }
-
-      .cv-highlight p,
-      .skill-group p,
-      .cert-item .cert-details {
-        margin: 0;
-        color: #c6d0dc;
-        line-height: 1.6;
-      }
-
-      .cv-timeline {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .cv-entry {
-        padding: 1.35rem;
-      }
-
-      .cv-entry-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .cv-entry-meta {
-        margin: 0;
-        color: #93c5fd;
-        white-space: nowrap;
-        font-size: 0.92rem;
-      }
-
-      .cv-entry-company,
-      .cv-entry-location {
-        color: #c6d0dc;
-        margin: 0.15rem 0 0;
-      }
-
-      .cv-list {
-        margin: 0;
-        padding-left: 1.25rem;
-        color: #d7e2ee;
-        line-height: 1.65;
-      }
-
-      .cv-list li + li {
-        margin-top: 0.45rem;
-      }
-
-      .skill-grid,
-      .cert-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
-      }
-
-      .skill-group,
-      .cert-item {
-        padding: 1.1rem 1.15rem;
-      }
-
-      .skill-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      .skill-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.38rem 0.7rem;
-        border-radius: 999px;
-        background: rgba(96, 165, 250, 0.12);
-        color: #bfdbfe;
-        border: 1px solid rgba(96, 165, 250, 0.24);
-        font-size: 0.86rem;
-        line-height: 1;
-      }
-
-      .cv-chip-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin: 1rem 0 0;
-      }
-
-      .cv-chip {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.34rem 0.65rem;
-        border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.18);
-        color: #cbd5e1;
-        background: rgba(15, 23, 42, 0.55);
-        font-size: 0.84rem;
-      }
-
-      .cert-item {
-        border-left: 3px solid #60a5fa;
-      }
-
-      @media (max-width: 920px) {
-        .cv-hero {
-          grid-template-columns: 1fr;
-        }
-
-        .cv-entry-header,
-        .section-head {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .cv-info-table th {
-          width: 42%;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .cv-shell {
-          padding: 0 1rem;
-        }
-
-        .cv-hero-copy,
-        .cv-profile-card,
-        .cv-section-panel,
-        .cv-entry,
-        .skill-group,
-        .cert-item {
-          padding: 1.1rem;
-        }
-
-        .cv-actions a {
-          width: 100%;
-        }
-
-        .cv-info-table th,
-        .cv-info-table td {
-          display: block;
-          width: 100%;
-          padding: 0.45rem 0;
-        }
-
-        .cv-info-table tr {
-          display: block;
-          padding: 0.55rem 0;
-          border-bottom: 1px solid rgba(148, 163, 184, 0.14);
-        }
-
-        .cv-info-table th {
-          border: 0;
-        }
-
-        .cv-info-table td {
-          border: 0;
-          padding-top: 0;
-        }
-      }
-
-      @media print {
-        body {
-          background: white;
-          color: black;
-        }
-
-        .site-header,
-        .site-footer,
-        .cv-actions {
-          display: none;
-        }
-
-        .cv-panel,
-        .cv-highlight,
-        .cv-entry,
-        .skill-group,
-        .cert-item {
-          background: transparent;
-          border-color: #cbd5e1;
-          box-shadow: none;
-          backdrop-filter: none;
-        }
-
-        .cv-info-table th,
-        .cv-info-table td,
-        .cv-list,
-        .cv-summary,
-        .cv-role,
-        .cv-entry-company,
-        .cv-entry-location,
-        .cv-entry-meta,
-        .cv-highlight p,
-        .skill-group p,
-        .cert-item .cert-details {
-          color: black;
-        }
-
-        a {
-          color: black;
-          text-decoration: none;
-        }
-      }
-    </style>
   </head>
-  <body>
+  <body class="minimal-home minimal-detail">
+    <a class="skip-link" href="#main">Skip to content</a>
     <div id="partial-header"></div>
 
-    <main class="cv-page">
+    <main id="main" class="cv-page">
       <div class="cv-shell">
         <section class="cv-hero">
           <div class="cv-panel cv-hero-copy">
@@ -433,8 +24,8 @@
             <p class="cv-summary">I build security work that is practical to operate, easy to review, and grounded in real workflows. My focus is on improving visibility, speeding up analysis, and reducing manual effort.</p>
             <div class="cv-actions">
               <a href="Karthikean Pathmanathan.pdf" class="primary" download>Download CV</a>
-              <a href="/CV/pages/projects/">View projects</a>
-              <a href="/CV/pages/contact/">Contact</a>
+              <a href="../projects/">View projects</a>
+              <a href="../contact/">Contact</a>
             </div>
           </div>
 
@@ -464,7 +55,7 @@
                 </tr>
                 <tr>
                   <th>GitHub</th>
-                  <td><a href="https://github.com/madebynoturmom" target="_blank" rel="noreferrer">madebynoturmom</a></td>
+                  <td><a href="https://github.com/geekedctrl" target="_blank" rel="noreferrer">geekedctrl</a></td>
                 </tr>
                 <tr>
                   <th>Availability</th>
@@ -545,6 +136,17 @@
             <article class="cv-entry">
               <div class="cv-entry-header">
                 <div>
+                  <h3>Technology Consulting Intern</h3>
+                  <p class="cv-entry-company">EY</p>
+                  <p class="cv-entry-location">Federal Territory of Kuala Lumpur, Malaysia · On-site</p>
+                </div>
+                <p class="cv-entry-meta">Jan 2026 – Apr 2026</p>
+              </div>
+            </article>
+
+            <article class="cv-entry">
+              <div class="cv-entry-header">
+                <div>
                   <h3>Cybersecurity Junior Assistant</h3>
                   <p class="cv-entry-company">Cre8IOT SDN BHD</p>
                   <p class="cv-entry-location">Subang Jaya, Malaysia</p>
@@ -562,6 +164,147 @@
                 <span class="cv-chip">Security awareness</span>
                 <span class="cv-chip">Audit trails</span>
               </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="co-curricular" class="cv-section cv-panel cv-section-panel" aria-labelledby="co-curricular-heading">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Leadership & involvement</p>
+              <h2 id="co-curricular-heading">Co-curricular experience</h2>
+            </div>
+          </div>
+          <div class="cv-timeline">
+            <article class="cv-entry">
+              <div class="cv-entry-header">
+                <div>
+                  <h3>Director of Public Relations</h3>
+                  <p class="cv-entry-company">AWS Student Builder Group — Sunway University</p>
+                  <p class="cv-entry-location">Sunway University</p>
+                </div>
+                <p class="cv-entry-meta">Nov 2025 – Aug 2026</p>
+              </div>
+            </article>
+
+            <article class="cv-entry">
+              <div class="cv-entry-header">
+                <div>
+                  <h3>Public Relations Department Committee</h3>
+                  <p class="cv-entry-company">GDGoC Sunway University</p>
+                  <p class="cv-entry-location">Sunway University</p>
+                </div>
+                <p class="cv-entry-meta">Sep 2025 – Aug 2026</p>
+              </div>
+              <ul class="cv-list">
+                <li>Volunteered as an emcee for club events, helping guide programmes and engage attendees through clear, confident communication.</li>
+                <li>Participated in the club’s public relations activities, supporting event promotion and communication with the student community.</li>
+                <li>Contributed both on stage and through PR activities, combining public speaking with hands-on community engagement.</li>
+              </ul>
+            </article>
+
+            <article class="cv-entry">
+              <div class="cv-entry-header">
+                <div>
+                  <h3>Sponsorship Director</h3>
+                  <p class="cv-entry-company">Sunway MSWalk</p>
+                  <p class="cv-entry-location">Subang Jaya, Selangor, Malaysia · Hybrid</p>
+                </div>
+                <p class="cv-entry-meta">Feb 2026 – Jul 2026</p>
+              </div>
+              <ul class="cv-list">
+                <li>Secured approximately RM10,000 in sponsorship funds to support Sunway MSWalk.</li>
+                <li>Managed sponsorship fundraising efforts, translating external support into financial backing for the event.</li>
+              </ul>
+            </article>
+
+            <article class="cv-entry">
+              <div class="cv-entry-header">
+                <div>
+                  <h3>Director of Public Relations</h3>
+                  <p class="cv-entry-company">Rotaract Club of Sunway University</p>
+                  <p class="cv-entry-location">Malaysia</p>
+                </div>
+                <p class="cv-entry-meta">Jul 2025 – Jul 2026</p>
+              </div>
+              <ul class="cv-list">
+                <li>Owned end-to-end public relations work, from designing promotional materials to publishing content and handling member communications.</li>
+                <li>Managed the club’s design-to-publication workflow, keeping event announcements and member-facing updates clear and consistent.</li>
+                <li>Served as a point of contact for member enquiries, connecting the club’s public communications with day-to-day community needs.</li>
+              </ul>
+            </article>
+
+            <article class="cv-entry">
+              <div class="cv-entry-header">
+                <div>
+                  <h3>Director of Public Relations</h3>
+                  <p class="cv-entry-company">TEDxSunwayUniversity</p>
+                  <p class="cv-entry-location">Malaysia</p>
+                </div>
+                <p class="cv-entry-meta">Jul 2024 – Jul 2025</p>
+              </div>
+              <ul class="cv-list">
+                <li>Led the Public Relations team in crafting and executing communication strategies to enhance the TEDxSunwayUniversity brand presence online and offline.</li>
+                <li>Oversaw social media campaigns that increased engagement and audience reach across multiple platforms.</li>
+                <li>Collaborated with marketing and creative teams to maintain consistent messaging and tone across communication channels.</li>
+              </ul>
+              <div class="cv-chip-list">
+                <span class="cv-chip">Online PR</span>
+                <span class="cv-chip">Strategic Public Relations Planning</span>
+              </div>
+            </article>
+
+            <article class="cv-entry">
+              <div class="cv-entry-header">
+                <div>
+                  <h3>Director of IT</h3>
+                  <p class="cv-entry-company">TEDxSunwayUniversity</p>
+                  <p class="cv-entry-location">Malaysia</p>
+                </div>
+                <p class="cv-entry-meta">Jul 2024 – Jul 2025</p>
+              </div>
+              <ul class="cv-list">
+                <li>Led the redevelopment of the official TEDxSunwayUniversity website, improving SEO ranking, site performance, and user experience.</li>
+                <li>Optimized website architecture and implemented performance enhancements for faster load times and better responsiveness.</li>
+                <li>Managed a team of developers and coordinated with design and marketing teams to ensure consistent branding and functionality.</li>
+                <li>Oversaw IT operations during events, supporting technical execution and system reliability.</li>
+                <li>Introduced best practices for web maintenance, security, and analytics tracking to support long-term digital growth.</li>
+              </ul>
+              <div class="cv-chip-list">
+                <span class="cv-chip">Information Technology Infrastructure</span>
+                <span class="cv-chip">Technology Management</span>
+              </div>
+            </article>
+
+            <article class="cv-entry">
+              <div class="cv-entry-header">
+                <div>
+                  <h3>PR Committee Member</h3>
+                  <p class="cv-entry-company">Sunway Blockchain Club</p>
+                  <p class="cv-entry-location">Malaysia</p>
+                </div>
+                <p class="cv-entry-meta">Feb 2024 – Oct 2024</p>
+              </div>
+              <ul class="cv-list">
+                <li>Supported the club’s public relations activities, helping communicate events and initiatives to the student community.</li>
+                <li>Contributed to promotional efforts that made blockchain-focused activities accessible and engaging for students.</li>
+                <li>Worked with fellow committee members to support clear, consistent communication around club activities.</li>
+              </ul>
+            </article>
+
+            <article class="cv-entry">
+              <div class="cv-entry-header">
+                <div>
+                  <h3>Assistant Event Director</h3>
+                  <p class="cv-entry-company">Sunway Cybersecurity Club</p>
+                </div>
+                <p class="cv-entry-meta">Feb 2024 – Oct 2024</p>
+              </div>
+              <ul class="cv-list">
+                <li>Supported event planning and coordination, helping translate the organising team’s ideas into structured activities.</li>
+                <li>Assisted with event logistics and committee coordination to support smooth preparation and delivery.</li>
+                <li>Contributed to student-focused cybersecurity events, combining teamwork and organisational skills with an interest in security education.</li>
+              </ul>
             </article>
           </div>
         </section>
@@ -791,25 +534,7 @@
 
     <div id="partial-footer"></div>
 
-    <script>
-      async function loadPartial(id, url) {
-        try {
-          const res = await fetch(url);
-          if (!res.ok) throw new Error('Failed to load ' + url);
-          const html = await res.text();
-          document.getElementById(id).innerHTML = html;
-        } catch (err) {
-          console.error(err);
-        }
-      }
 
-      loadPartial('partial-header', '../../partial/header.html');
-      loadPartial('partial-footer', '../../partial/footer.html');
-
-      setTimeout(() => {
-        const yearEl = document.getElementById('year');
-        if (yearEl) yearEl.textContent = new Date().getFullYear();
-      }, 100);
-    </script>
+  <script src="../../assets/main.js" defer></script>
   </body>
 </html>

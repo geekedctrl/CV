@@ -1,161 +1,56 @@
-// Basic data for projects - edit to add your own projects
-const projects = [
-  {
-    id: 'p1',
-    title: 'Network Monitoring Dashboard',
-    short: 'Real-time network traffic visualization and anomaly detection.',
-    desc: 'A dashboard built with HTML/CSS/JS to visualize network traffic patterns and detect potential security threats using basic anomaly detection algorithms.',
-    links: [{label:'Demo',url:'#'},{label:'GitHub',url:'#'}]
-  },
-  {
-    id: 'p2',
-    title: 'Threat Intelligence Feed',
-    short: 'Aggregator for security feeds with automated OSINT enrichment.',
-    desc: 'Python-based threat intel aggregator that pulls from multiple sources, enriches with OSINT data, and provides a clean API for integration.',
-    links: [{label:'Demo',url:'#'},{label:'GitHub',url:'#'}]
-  }
-];
-
-// Labs & demos - cybersecurity focused
-const labs = [
-  {
-    id: 'l1',
-    title: 'Password Strength Analyzer',
-    short: 'Client-side password entropy calculator.',
-    desc: 'Interactive tool to analyze password strength using entropy calculations, common pattern detection, and dictionary checks.',
-    tech: 'JavaScript, ZXCVBN',
-    links: [{label:'Try it',url:'#'},{label:'Source',url:'#'}]
-  },
-  {
-    id: 'l2',
-    title: 'SIEM Query Builder',
-    short: 'Visual query builder for SIEM platforms.',
-    desc: 'A visual interface to build complex queries for Splunk/ELK with syntax highlighting and validation.',
-    tech: 'React, Monaco Editor',
-    links: [{label:'Demo',url:'#'},{label:'GitHub',url:'#'}]
-  },
-  {
-    id: 'l3',
-    title: 'Phishing Email Analyzer',
-    short: 'Static analysis tool for suspicious emails.',
-    desc: 'Analyzes email headers, links, and attachments to identify phishing indicators using heuristics and reputation checks.',
-    tech: 'Python, VirusTotal API',
-    links: [{label:'Tool',url:'#'},{label:'Source',url:'#'}]
-  }
-];
-
-// DOM helpers
-const $ = sel => document.querySelector(sel);
-const $$ = sel => Array.from(document.querySelectorAll(sel));
-
-function renderProjects(){
-  const grid = $('#projectsGrid');
-  if(!grid) return;
-  projects.forEach(p => {
-    const el = document.createElement('article');
-    el.className = 'card';
-    el.tabIndex = 0;
-    el.innerHTML = `<h4>${p.title}</h4><p>${p.short}</p>`;
-    el.addEventListener('click', ()=> openModal(p));
-    el.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') openModal(p); });
-    grid.appendChild(el);
-  })
+const siteRoot = new URL('../', document.currentScript.src);
+async function loadPartial(id, path) {
+ const target = document.getElementById(id);
+ if (!target) return;
+ try {
+  const response = await fetch(new URL(path, siteRoot));
+  if (!response.ok) throw new Error(`Unable to load ${path}`);
+  target.innerHTML = await response.text();
+  target.querySelectorAll('[href^="/CV/"]').forEach(link => { link.href = new URL(link.getAttribute('href').slice(4), siteRoot).href; });
+ } catch (error) { console.error(error); target.textContent = id === 'partial-header' ? 'Karthikean Pathmanathan' : ''; }
 }
-
-function renderLabs(){
-  const grid = $('#labsGrid');
-  if(!grid) return;
-  labs.forEach(l => {
-    const el = document.createElement('article');
-    el.className = 'card';
-    el.tabIndex = 0;
-    el.innerHTML = `<h4>${l.title}</h4><p class="lab-meta">${l.tech}</p><p>${l.short}</p>`;
-    el.addEventListener('click', ()=> openModal(l));
-    el.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') openModal(l); });
-    grid.appendChild(el);
-  })
+async function init() {
+ await Promise.all([loadPartial('partial-header','partial/header.html'), loadPartial('partial-footer','partial/footer.html')]);
+ const year = document.getElementById('year');
+ if (year) year.textContent = new Date().getFullYear();
+ const nav = document.getElementById('mainNav');
+ const toggle = document.querySelector('.nav-toggle');
+ const setMenu = open => { nav?.classList.toggle('active',open); toggle?.setAttribute('aria-expanded',String(open)); toggle?.setAttribute('aria-label',open ? 'Close navigation' : 'Open navigation'); };
+ toggle?.addEventListener('click',() => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+ document.addEventListener('keydown',event => { if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') { setMenu(false); toggle.focus(); } });
+ document.addEventListener('click',event => { if (!event.target.closest('.site-header')) setMenu(false); });
+ const normalize = path => path.replace(/index\.html$/,'').replace(/\/$/,'') || '/';
+ nav?.querySelectorAll('a').forEach(link => { if (!new URL(link.href).hash && normalize(new URL(link.href).pathname) === normalize(location.pathname)) link.setAttribute('aria-current','page'); link.addEventListener('click',() => setMenu(false)); });
+ const tabs = document.querySelectorAll('.filter-tab');
+ tabs.forEach(tab => { tab.setAttribute('aria-pressed',String(tab.classList.contains('active'))); tab.addEventListener('click',() => {
+  tabs.forEach(item => { item.classList.toggle('active',item === tab); item.setAttribute('aria-pressed',String(item === tab)); });
+  document.querySelectorAll('[data-category]').forEach(card => { card.hidden = tab.dataset.filter !== 'all' && !card.dataset.category.split(' ').includes(tab.dataset.filter); });
+ }); });
 }
+init();
 
-function openModal(project){
-  const modal = $('#modal');
-  $('#modalTitle').textContent = project.title;
-  $('#modalDesc').textContent = project.desc;
-  const links = $('#modalLinks');
-  links.innerHTML = project.links.map(l=>`<a class="btn" href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label}</a>`).join(' ');
-  modal.setAttribute('aria-hidden','false');
-  document.body.style.overflow = 'hidden';
+// A lightweight, deterministic starfield. Animation stops when hidden or offscreen.
+function initStarfield() {
+ const canvas = document.getElementById('starfield');
+ if (!canvas) return;
+ const ctx = canvas.getContext('2d');
+ if (!ctx) return;
+ const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+ let width = 0, height = 0, stars = [], frame = 0, visible = true;
+ function resize() {
+  const bounds = canvas.getBoundingClientRect(); width = bounds.width; height = bounds.height;
+  const ratio = Math.min(devicePixelRatio || 1, 2); canvas.width = width * ratio; canvas.height = height * ratio; ctx.setTransform(ratio,0,0,ratio,0,0);
+  let seed = 42; const random = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+  stars = Array.from({length: Math.floor(width * height / 3100)}, () => ({x:random()*width,y:random()*height,r:random()*.9+.25,a:random()*.5+.2,phase:random()*6.28}));
+  draw(0);
+ }
+ function draw(time) {
+  ctx.clearRect(0,0,width,height);
+  for (const star of stars) { ctx.beginPath(); ctx.arc(star.x,star.y,star.r,0,Math.PI*2); const alpha = motion.matches ? star.a : star.a*(.75+.25*Math.sin(time*.0005+star.phase)); ctx.fillStyle=`rgba(218,209,255,${alpha})`; ctx.fill(); }
+ }
+ function tick(time) { frame = 0; draw(time); if (visible && !document.hidden && !motion.matches) frame = requestAnimationFrame(tick); }
+ function update() { if (frame) cancelAnimationFrame(frame); frame = 0; if (visible && !document.hidden && !motion.matches) frame = requestAnimationFrame(tick); else draw(0); }
+ resize(); window.addEventListener('resize',resize); document.addEventListener('visibilitychange',update); motion.addEventListener('change',update);
+ new IntersectionObserver(entries => { visible = entries[0].isIntersecting; update(); }).observe(canvas);
 }
-
-function closeModal(){
-  const modal = $('#modal');
-  modal.setAttribute('aria-hidden','true');
-  document.body.style.overflow = '';
-}
-
-function initModalEvents(){
-  document.addEventListener('click', (e)=>{
-    if(e.target.matches('[data-close]')) closeModal();
-  });
-  document.addEventListener('keydown', (e)=>{
-    const modal = $('#modal');
-    if(modal.getAttribute('aria-hidden') === 'false' && e.key === 'Escape') closeModal();
-  });
-}
-
-function initNavToggle(){
-  const btn = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
-  btn.addEventListener('click', ()=>{
-    nav.classList.toggle('active');
-  })
-}
-
-function setActiveNavLink(){
-  const normalizePath = (path) => path.replace(/index\.html$/i, '').replace(/\/$/, '/') || '/';
-  const currentPath = normalizePath(window.location.pathname);
-  document.querySelectorAll('.nav a').forEach((link) => {
-    const linkPath = normalizePath(new URL(link.href, window.location.origin).pathname);
-    const isActive = currentPath === linkPath;
-    if (isActive) {
-      link.setAttribute('aria-current', 'page');
-    } else {
-      link.removeAttribute('aria-current');
-    }
-  });
-}
-
-function init(){
-  const yearEl = document.getElementById('year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
-  // Only render projects/labs if the grids exist (for backwards compatibility)
-  if(document.getElementById('projectsGrid')) renderProjects();
-  if(document.getElementById('labsGrid')) renderLabs();
-  initModalEvents();
-  // Wait for header/footer partials to be injected, then initialize nav
-  waitForElement('.nav').then(()=>{
-    initNavToggle();
-    setActiveNavLink();
-  }).catch(()=>{});
-}
-
-document.addEventListener('DOMContentLoaded', init);
-
-// small helper to wait for element to appear in DOM (used for partials)
-function waitForElement(selector, timeout = 2000){
-  return new Promise((resolve, reject)=>{
-    const el = document.querySelector(selector);
-    if(el) return resolve(el);
-    const observer = new MutationObserver(()=>{
-      const found = document.querySelector(selector);
-      if(found){
-        observer.disconnect();
-        resolve(found);
-      }
-    });
-    observer.observe(document.body, {childList:true, subtree:true});
-    setTimeout(()=>{
-      observer.disconnect();
-      reject(new Error('Timed out waiting for ' + selector));
-    }, timeout);
-  });
-  }
+initStarfield();

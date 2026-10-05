@@ -1,185 +1,26 @@
-<!  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Projects - Karthikean Pathmanathan</title>
-    <meta name="description" content="Cybersecurity projects and implementations by Karthikean Pathmanathan" />
-    <link rel="icon" type="image/png" href="/CV/assets/logo/KP_icon.png" />
-    <link rel="stylesheet" href="/CV/assets/css/dark.css" />
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Projects - Karthikean Pathmanathan</title>
     <meta name="description" content="Projects and implementations by Karthikean Pathmanathan" />
-    <link rel="stylesheet" href="/CV/assets/css/dark.css" />
-    <style>html,body{color:#e6eef6} .container{color:inherit}</style>
-    <style>
-      .page-header {
-        padding: 3rem 0 2rem;
-        text-align: center;
-        border-bottom: 1px solid rgba(148,163,184,0.14);
-      }
-      .page-header h1 {
-        margin: 0 0 0.5rem;
-        font-size: 2.5rem;
-        color: var(--accent);
-      }
-      .page-header p {
-        color: var(--muted);
-        max-width: 700px;
-        margin: 0 auto;
-      }
-      .project-section {
-        padding: 3rem 0;
-      }
-      .project-card {
-        background: rgba(10, 18, 31, 0.42);
-        padding: 2rem;
-        border-radius: var(--radius);
-        margin-bottom: 2rem;
-        border: 1px solid rgba(148,163,184,0.14);
-        transition: transform 0.2s, box-shadow 0.2s;
-      }
-      .project-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(2,6,23,0.18);
-        border-color: rgba(125, 211, 252, 0.28);
-      }
-      .project-card h3 {
-        color: var(--accent);
-        margin: 0 0 0.5rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-      .project-badge {
-        display: inline-block;
-        background: rgba(96,165,250,0.15);
-        color: var(--accent);
-        padding: 0.25rem 0.75rem;
-        border-radius: 12px;
-        font-size: 0.75rem;
-        font-weight: 500;
-        margin-left: auto;
-      }
-      .project-meta {
-        display: flex;
-        gap: 1.5rem;
-        margin: 1rem 0;
-        flex-wrap: wrap;
-      }
-      .meta-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-      .meta-item strong {
-        color: #e6eef6;
-      }
-      .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin: 1rem 0;
-      }
-      .tech-tag {
-        background: rgba(255,255,255,0.04);
-        padding: 0.35rem 0.75rem;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        color: var(--muted);
-        border: 1px solid rgba(148,163,184,0.14);
-      }
-      .project-description {
-        line-height: 1.7;
-        color: #d0d8e0;
-        margin: 1rem 0;
-      }
-      .project-highlights {
-        margin: 1.5rem 0;
-      }
-      .project-highlights h4 {
-        margin: 0 0 0.75rem;
-        font-size: 1rem;
-        color: #e6eef6;
-      }
-      .project-highlights ul {
-        margin: 0;
-        padding-left: 1.5rem;
-        color: var(--muted);
-      }
-      .project-highlights li {
-        margin-bottom: 0.5rem;
-        line-height: 1.6;
-      }
-      .project-links {
-        display: flex;
-        gap: 0.75rem;
-        margin-top: 1.5rem;
-        flex-wrap: wrap;
-      }
-      .project-links a {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        background: rgba(91,140,255,0.12);
-        color: var(--accent);
-        text-decoration: none;
-        border-radius: 8px;
-        border: 1px solid rgba(91,140,255,0.26);
-        transition: background 0.2s;
-      }
-      .project-links a:hover {
-        background: rgba(91,140,255,0.2);
-      }
-      .project-links a img {
-        width: 20px;
-        height: 20px;
-        object-fit: contain;
-        filter: brightness(0) saturate(100%) invert(67%) sepia(60%) saturate(466%) hue-rotate(187deg) brightness(103%) contrast(96%);
-      }
-      .project-links a:hover img {
-        filter: brightness(0) saturate(100%) invert(67%) sepia(80%) saturate(466%) hue-rotate(187deg) brightness(110%) contrast(96%);
-      }
-      .filter-tabs {
-        display: flex;
-        gap: 1rem;
-        margin: 2rem 0;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .filter-tab {
-        padding: 0.5rem 1.5rem;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(148,163,184,0.14);
-        border-radius: 8px;
-        color: var(--muted);
-        cursor: pointer;
-        transition: all 0.2s;
-      }
-      .filter-tab:hover {
-        background: rgba(255,255,255,0.06);
-        border-color: rgba(125, 211, 252, 0.28);
-      }
-      .filter-tab.active {
-        background: rgba(91,140,255,0.16);
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-    </style>
+    <link rel="icon" href="../../assets/logo/KP_icon.png">
+    <link rel="stylesheet" href="../../assets/css/portfolio.css" />
+    <link rel="stylesheet" href="../../assets/css/home.css" />
+
+
   </head>
-  <body>
+  <body class="minimal-home minimal-detail">
+    <a class="skip-link" href="#main">Skip to content</a>
     <!-- header partial will be injected here -->
     <div id="partial-header"></div>
 
-    <main>
+    <main id="main">
       <div class="page-header">
         <div class="container">
           <h1>Projects & Implementations</h1>
-          <p>Software development projects spanning web applications, system infrastructure, AI/ML, and automation</p>
+          <p>Recent public GitHub projects alongside my earlier software, infrastructure, and security work.</p>
         </div>
       </div>
 
@@ -192,9 +33,81 @@
 
       <section class="project-section">
         <div class="container">
-          
+
+          <article id="github-slate" class="project-card" data-category="fullstack aiml">
+            <h3>Slate — Financial Research Terminal <span class="project-badge">GitHub project</span></h3>
+            <div class="project-meta"><span>Updated <time datetime="2026-10-05">2026-10-05</time></span></div>
+            <div class="tech-stack"><span class="tech-tag">TypeScript</span><span class="tech-tag">Next.js</span><span class="tech-tag">Express</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Docker</span></div>
+            <div class="project-description"><p>Self-hosted financial research workspace with market charts, quotes, portfolio tracking, a research journal, price alerts, and optional AI assistance.</p></div>
+            <div class="project-highlights"><h4>Highlights</h4><ul><li>Resizable widget layouts and linked stock groups</li><li>Private portfolios and Markdown research notes</li><li>Server-side price alerts and configurable AI providers</li></ul></div>
+            <div class="project-links"><a href="https://github.com/geekedctrl/slate" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="https://github.com/geekedctrl/slate#readme" target="_blank" rel="noopener noreferrer">Read documentation ↗</a></div>
+          </article>
+
+          <article id="github-birthday" class="project-card" data-category="fullstack">
+            <h3>Birthday Experience <span class="project-badge">GitHub project</span></h3>
+            <div class="project-meta"><span>Updated <time datetime="2026-10-03">2026-10-03</time></span></div>
+            <div class="tech-stack"><span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">React</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Docker</span></div>
+            <div class="project-description"><p>Interactive, self-hosted birthday experience with a cinematic opening, memory timeline, mini-game, music player, gift reveal, and reaction capture.</p></div>
+            <div class="project-highlights"><h4>Highlights</h4><ul><li>Scene-based storytelling with photos, audio, and interactive moments</li><li>Private reaction capture and administrator review</li><li>Docker deployment with persistent local storage</li></ul></div>
+            <div class="project-links"><a href="https://github.com/geekedctrl/birthday" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="https://github.com/geekedctrl/birthday#readme" target="_blank" rel="noopener noreferrer">Read documentation ↗</a></div>
+          </article>
+
+          <article id="github-lorrysystem-marketing-system" class="project-card" data-category="fullstack">
+            <h3>LorrySystem Marketing System <span class="project-badge">GitHub project</span></h3>
+            <div class="project-meta"><span>Updated <time datetime="2026-10-02">2026-10-02</time></span></div>
+            <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">SQLAlchemy</span><span class="tech-tag">Docker</span></div>
+            <div class="project-description"><p>Marketing API and server-rendered dashboard for managing leads, reviewing research and scores, and approving marketing actions.</p></div>
+            <div class="project-highlights"><h4>Highlights</h4><ul><li>Lead management, filters, and approval workflows</li><li>Business-card OCR and CSV imports with duplicate review</li><li>Server-side API access and CSRF-protected forms</li></ul></div>
+            <div class="project-links"><a href="https://github.com/geekedctrl/lorrysystem-marketing-system" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="https://github.com/geekedctrl/lorrysystem-marketing-system#readme" target="_blank" rel="noopener noreferrer">Read documentation ↗</a></div>
+          </article>
+
+          <article id="github-i-hear-you" class="project-card" data-category="fullstack">
+            <h3>I Hear You — Support Check-in <span class="project-badge">GitHub project</span></h3>
+            <div class="project-meta"><span>Updated <time datetime="2026-08-27">2026-08-27</time></span></div>
+            <div class="tech-stack"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">ntfy</span></div>
+            <div class="project-description"><p>Mobile-first web app for quick emotional check-ins, support requests, and a guided breathing exercise.</p></div>
+            <div class="project-highlights"><h4>Highlights</h4><ul><li>Short check-in flow with optional messages</li><li>Notifications for call, text, and presence requests</li><li>Animated 60-second breathing guide</li></ul></div>
+            <div class="project-links"><a href="https://github.com/geekedctrl/i-hear-you" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="https://github.com/geekedctrl/i-hear-you#readme" target="_blank" rel="noopener noreferrer">Read documentation ↗</a></div>
+          </article>
+
+          <article id="github-capstone-project" class="project-card" data-category="aiml system">
+            <h3>Healthcare AI-Based Intrusion Detection <span class="project-badge">Research & development</span></h3>
+            <div class="project-meta"><span>Updated <time datetime="2026-08-14">2026-08-14</time></span></div>
+            <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">Suricata</span><span class="tech-tag">pfSense</span><span class="tech-tag">scikit-learn</span><span class="tech-tag">VirtualBox</span></div>
+            <div class="project-description"><p>Research and development project investigating AI-assisted intrusion detection and prevention in an isolated healthcare-oriented network testbed.</p></div>
+            <div class="project-highlights"><h4>Highlights</h4><ul><li>Research architecture combining monitoring, preprocessing, and classification</li><li>Planned comparison of machine-learning and deep-learning models</li><li>Evaluation of detection quality, false positives, and processing efficiency</li></ul></div>
+            <div class="project-links"><a href="https://github.com/geekedctrl/Capstone-Project" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="https://github.com/geekedctrl/Capstone-Project#readme" target="_blank" rel="noopener noreferrer">Read documentation ↗</a></div>
+          </article>
+
+          <article id="github-random-number-generators-and-chaotic-maps" class="project-card" data-category="system">
+            <h3>Chaotic-Map Random Number Generators <span class="project-badge">GitHub project</span></h3>
+            <div class="project-meta"><span>Updated <time datetime="2026-08-05">2026-08-05</time></span></div>
+            <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">NIST SP 800-22</span><span class="tech-tag">Data Visualization</span></div>
+            <div class="project-description"><p>Implements strong and weak logistic-map pseudorandom generators, visualizations, and a pipeline for 14 applicable NIST SP 800-22 statistical tests.</p></div>
+            <div class="project-highlights"><h4>Highlights</h4><ul><li>Multi-bit XOR and threshold extraction methods</li><li>Random-walk and bitmap visualizations</li><li>Benchmark validation and CSV test-result exports</li></ul></div>
+            <div class="project-links"><a href="https://github.com/geekedctrl/Random-Number-Generators-and-Chaotic-Maps" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="https://github.com/geekedctrl/Random-Number-Generators-and-Chaotic-Maps#readme" target="_blank" rel="noopener noreferrer">Read documentation ↗</a></div>
+          </article>
+
+          <article id="github-cpu-scheduling" class="project-card" data-category="system">
+            <h3>CPU Scheduling Simulator <span class="project-badge">GitHub project</span></h3>
+            <div class="project-meta"><span>Updated <time datetime="2024-12-02">2024-12-02</time></span></div>
+            <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">SQLite</span><span class="tech-tag">HTML</span></div>
+            <div class="project-description"><p>Flask application for entering process data and comparing CPU scheduling algorithms with persisted SQLite records.</p></div>
+            <div class="project-highlights"><h4>Highlights</h4><ul><li>First-come-first-served and shortest-job-first scheduling</li><li>Priority and round-robin algorithms</li><li>Completion, waiting, and turnaround-time calculations</li></ul></div>
+            <div class="project-links"><a href="https://github.com/geekedctrl/CPU-Scheduling" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="https://github.com/geekedctrl/CPU-Scheduling#readme" target="_blank" rel="noopener noreferrer">Read documentation ↗</a></div>
+          </article>
+
+          <article id="github-java-oop-project" class="project-card" data-category="system">
+            <h3>Java OOP Management Systems <span class="project-badge">GitHub project</span></h3>
+            <div class="project-meta"><span>Updated <time datetime="2024-12-01">2024-12-01</time></span></div>
+            <div class="tech-stack"><span class="tech-tag">Java</span><span class="tech-tag">Object-Oriented Programming</span></div>
+            <div class="project-description"><p>Collection of event, library, and restaurant management examples demonstrating object-oriented programming in Java.</p></div>
+            <div class="project-highlights"><h4>Highlights</h4><ul><li>Encapsulation and abstraction</li><li>Inheritance and polymorphism</li><li>Management-system examples for learning and experimentation</li></ul></div>
+            <div class="project-links"><a href="https://github.com/geekedctrl/Java-OOP-Project" target="_blank" rel="noopener noreferrer">View source ↗</a><a href="https://github.com/geekedctrl/Java-OOP-Project#readme" target="_blank" rel="noopener noreferrer">Read documentation ↗</a></div>
+          </article>
+
           <!-- VERO Online Ticketing Platform -->
-          <article class="project-card" data-category="fullstack">
+          <article id="vero" class="project-card" data-category="fullstack">
             <h3>
               VERO Online Ticketing Platform with Blockchain Smart Contract
               <span class="project-badge">Ongoing</span>
@@ -229,13 +142,12 @@
               </ul>
             </div>
             <div class="project-links">
-              <a href="#"><img src="/CV/assets/icons/github.svg" alt="GitHub" /> GitHub</a>
-              <a href="#"><img src="/CV/assets/icons/documentation.svg" alt="Documentation" /> Documentation</a>
-            </div>
+              <span class="unavailable-link">Project resources coming soon</span>
+</div>
           </article>
 
           <!-- License Plate Recognition System -->
-          <article class="project-card" data-category="fullstack">
+          <article id="license-plate" class="project-card" data-category="fullstack">
             <h3>
               License Plate Recognition System
               <span class="project-badge">Personal</span>
@@ -275,13 +187,12 @@
               </ul>
             </div>
             <div class="project-links">
-              <a href="#"><img src="/CV/assets/icons/github.svg" alt="GitHub" /> GitHub</a>
-              <a href="#"><img src="/CV/assets/icons/documentation.svg" alt="Documentation" /> Documentation</a>
-            </div>
+              <span class="unavailable-link">Project resources coming soon</span>
+</div>
           </article>
 
           <!-- Linux Lan Infrastructure Project -->
-          <article class="project-card" data-category="system">
+          <article id="linux-lan" class="project-card" data-category="system">
             <h3>
               Linux LAN Infrastructure Project
               <span class="project-badge">University</span>
@@ -315,13 +226,12 @@
               </ul>
             </div>
             <div class="project-links">
-              <a href="#"><img src="/CV/assets/icons/documentation.svg" alt="Documentation" /> Documentation</a>
-              <a href="#"><img src="/CV/assets/icons/github.svg" alt="GitHub" /> GitHub</a>
-            </div>
+              <span class="unavailable-link">Project resources coming soon</span>
+</div>
           </article>
 
           <!-- AI Stock Market Analysis -->
-          <article class="project-card" data-category="aiml">
+          <article id="ai-stock" class="project-card" data-category="aiml">
             <h3>
               AI Stock Market Analysis
               <span class="project-badge">Personal</span>
@@ -354,13 +264,12 @@
               </ul>
             </div>
             <div class="project-links">
-              <a href="#"><img src="/CV/assets/icons/github.svg" alt="GitHub" /> GitHub</a>
-              <a href="#"><img src="/CV/assets/icons/demo.png" alt="Demo" /> Demo</a>
-            </div>
+              <span class="unavailable-link">Project resources coming soon</span>
+</div>
           </article>
 
           <!-- Restaurant Management System -->
-          <article class="project-card" data-category="system">
+          <article id="restaurant" class="project-card" data-category="system">
             <h3>
               Restaurant Management System
               <span class="project-badge">University</span>
@@ -389,9 +298,8 @@
               </ul>
             </div>
             <div class="project-links">
-              <a href="#"><img src="/CV/assets/icons/github.svg" alt="GitHub" /> GitHub</a>
-              <a href="#"><img src="/CV/assets/icons/documentation.svg" alt="Documentation" /> Documentation</a>
-            </div>
+              <span class="unavailable-link">Project resources coming soon</span>
+</div>
           </article>
 
         </div>
@@ -401,51 +309,7 @@
     <!-- footer partial will be injected here -->
     <div id="partial-footer"></div>
 
-    <script>
-      // Load partials
-      async function loadPartial(id, url){
-        try {
-          const res = await fetch(url);
-          if(!res.ok) throw new Error('Failed to load ' + url);
-          const html = await res.text();
-          document.getElementById(id).innerHTML = html;
-        } catch (err) {
-          console.error(err);
-        }
-      }
 
-      loadPartial('partial-header', '../../partial/header.html');
-      loadPartial('partial-footer', '../../partial/footer.html');
-
-      // Year in footer
-      setTimeout(() => {
-        const yearEl = document.getElementById('year');
-        if(yearEl) yearEl.textContent = new Date().getFullYear();
-      }, 100);
-
-      // Filter functionality
-      const filterTabs = document.querySelectorAll('.filter-tab');
-      const projectCards = document.querySelectorAll('.project-card');
-
-      filterTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          const filter = tab.dataset.filter;
-          
-          // Update active tab
-          filterTabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-
-          // Filter projects
-          projectCards.forEach(card => {
-            if (filter === 'all') {
-              card.style.display = 'block';
-            } else {
-              const categories = card.dataset.category.split(' ');
-              card.style.display = categories.includes(filter) ? 'block' : 'none';
-            }
-          });
-        });
-      });
-    </script>
+  <script src="../../assets/main.js" defer></script>
   </body>
 </html>
