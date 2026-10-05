@@ -3,6 +3,12 @@
 .minimal-home .container{width:min(1020px,calc(100% - 64px))}
 .minimal-home .site-header{position:relative;background:transparent}
 .minimal-home .header-inner{min-height:96px;border-bottom:1px solid var(--line)}
+@media(min-width:721px){
+  .minimal-home .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:20px}
+  .minimal-home .logo{justify-self:start}
+  .minimal-home .nav{justify-self:center}
+  .minimal-home .hire-link{justify-self:end;margin-left:0}
+}
 .minimal-home .logo{background:none;color:var(--ink);font-size:22px;letter-spacing:-1px}
 .minimal-home .nav{font-size:12px;gap:25px}
 .minimal-home .nav a:hover,.minimal-home a:hover{color:#c9d5c5}
